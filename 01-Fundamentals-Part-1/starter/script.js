@@ -1,20 +1,44 @@
+// CODING CHALLENGE 1
+
+
+
+
 // (END OF VIDEO TASKS)
 
-let country = 'Spain'
-const continent = 'Europe';
-let population = '46,792,561'
-const isIsland = false;
-let language;
-language = 'Spanish';
-language = 'Catalan';
+// const continentOne = 'Europe';
 
-console.log(typeof country);
-console.log(typeof continent);
-console.log(typeof population);
-console.log(typeof isIsland);
-console.log(language);
+// let country = 'Spain'
+// let population = 46792561;
+// const isIsland = false;
+// let language;
+// language = 'Spanish';
+// population++;
 
-// console.log('I live in ' + country + ' which is in ' + continent + ' and has a population of ' + population + '.')
+// let countryTwo = 'Finland';
+// let populationTwo = 6000000;
+// const languageTwo = 'Finish';
+
+// let countryThree = 'Portugal';
+// let populationThree = 11000000;
+// const languageThree = 'Portugues';
+
+// let averagePop = 33000000;
+
+// const description = countryThree + ' is in ' + continentOne + ", and it's " + populationThree + ' people speak ' + languageThree + '.'
+
+// console.log(population / 2);
+// console.log(population);
+// console.log(population > populationTwo);
+// console.log(population < averagePop);
+// console.log(description);
+
+// console.log(typeof country);
+// console.log(typeof continent);
+// console.log(typeof population);
+// console.log(typeof isIsland);
+// console.log(language);
+
+// console.log('I live in ' + country + ' which is in ' + continentOne + ' and has a population of ' + population + '.')
 
 
 // (NOTES & PRACTICE)
@@ -81,16 +105,59 @@ console.log(language);
 // Number values do not need to be in quotations unless they use symbols/letters
 
 
-let age = 35;
-age = 36;
+// let age = 35;
+// age = 36;
 
-const birthYear = 1986;
+// const birthYear = 1986;
 // birthYear = 1989; not allowed with const
 
 // const job; const should alway be defined
 // var is the original variable and not really used
-var job = 'Student';
-job = 'programmer'
+// var job = 'Student';
+// job = 'programmer'
 // never declare a variable without const, let or var first
-lastName = 'Syder';
-console.log(lastName);
+// lastName = 'Syder';
+// console.log(lastName);
+
+// (ASSIGNMENT OPPERATORS) =, +, +=, typeof
+
+
+// const now = 2037;
+// const ageRyan = now - 1991;
+// const ageAmy = now - 2020;
+
+// console.log(ageRyan, ageAmy);
+// console.log(ageRyan * 2, ageRyan / 10, 2 ** 3);
+// 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+
+// const firstName = 'Ryan';
+// const lastName = 'Syder'
+// console.log(firstName + ' ' + lastName)
+
+// let x = 10 + 5; //15
+// x += 10; // x = x + 10 = 25
+// x *= 4; // x = x * 4 = 100
+// x++; // x = x + 1 = 101
+// x--; // x = x - 1 = 100
+// x--; // x = x - 1 = 99
+// console.log(x);
+
+// console.log(ageRyan > ageAmy); // <, >, >=, <=
+// console.log(ageAmy >= 18);
+
+// const isFullAge = ageAmy >= 18;
+// console.log(isFullAge);
+// console.log(now - 1991 > now - 2018);
+
+// const now = 2037;
+// const ageRyan = now - 1991;
+// const ageAmy = now - 2020;
+
+// console.log(now - 1991 > now - 2018);
+
+// let x, y;
+// x = y = 25 - 10 - 5;
+// console.log(x, y)
+
+// const averageAge = (ageRyan + ageAmy) / 2;
+// console.log(ageRyan, ageAmy, averageAge);
