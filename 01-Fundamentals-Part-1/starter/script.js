@@ -12,19 +12,19 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // let johnMass = 92;
 // let johnHeight = 1.95;
 
-let markMass = 95;
-let markHeight = 1.88;
-let johnMass = 85;
-let johnHeight = 1.76;
+// let markMass = 95;
+// let markHeight = 1.88;
+// let johnMass = 85;
+// let johnHeight = 1.76;
 
-const markBMI = markMass / markHeight ** 2;
-const johnBMI = johnMass / (johnHeight * johnHeight);
+// const markBMI = markMass / markHeight ** 2;
+// const johnBMI = johnMass / (johnHeight * johnHeight);
 
-const markHigherBMI = markBMI > johnBMI;
+// const markHigherBMI = markBMI > johnBMI;
 
-console.log(markBMI);
-console.log(johnBMI);
-console.log(markHigherBMI);
+// console.log(markBMI);
+// console.log(johnBMI);
+// console.log(markHigherBMI);
 
 // (END OF VIDEO TASKS)
 
@@ -184,3 +184,24 @@ console.log(markHigherBMI);
 
 // const averageAge = (ageRyan + ageAmy) / 2;
 // console.log(ageRyan, ageAmy, averageAge);
+
+
+// STRINGS AND TEMPLATE LITERALS
+
+const firstName = 'Ryan';
+const job = 'Student';
+const birthYear = 1986;
+const year = 2022;
+
+const ryan = "Hi, I'm " + firstName + ", a " + (year - birthYear) + "yrs old " + job + ".";
+console.log(ryan);
+
+const ryanNew = `Hi, I'm ${firstName}, a ${year - birthYear}yrs old ${job}.`;
+console.log(ryanNew);
+
+console.log(`Just a regular string...`);
+
+console.log("String with\nmultiple\nlines");
+console.log(`String with
+multiple
+lines`)
