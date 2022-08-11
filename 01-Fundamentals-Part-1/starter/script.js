@@ -22,6 +22,8 @@ const johnBMI = johnMass / (johnHeight * johnHeight);
 
 const markHigherBMI = markBMI > johnBMI;
 
+console.log(markBMI);
+console.log(johnBMI);
 console.log(markHigherBMI);
 
 // (END OF VIDEO TASKS)
