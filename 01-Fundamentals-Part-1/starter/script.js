@@ -206,3 +206,34 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // console.log(`String with
 // multiple
 // lines`);
+
+
+// IF / ELSE STATEMENTS
+
+// let age = 19;
+// age = 17;
+// age = 20;
+// const isOldEnough = age >= 18;
+
+// if(isOldEnough) {
+//     console.log(`Sarah can start driving`)
+// }
+
+// let age = 15;
+
+// if(age >= 18) {
+//     console.log(`Sarah can start driving`)
+// } else {
+//     const yearsLeft = 18 - age;
+//     console.log(`Sarah is too young. Wait another ${yearsLeft}yrs.`);
+// }
+
+// const birthYear = 1986;
+// let century;
+
+// if(birthYear <= 2000) {
+//     century = 20;
+// } else {
+//     century = 21
+// }
+// console.log(century);
