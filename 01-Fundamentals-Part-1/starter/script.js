@@ -26,16 +26,17 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // console.log(johnBMI);
 // console.log(markHigherBMI);
 
+
 // (END OF VIDEO TASKS)
 
 // const continentOne = 'Europe';
 
-// let country = 'Spain'
-// let population = 46792561;
+// let countryOne = 'Spain'
+// let populationOne = 46000000;
 // const isIsland = false;
-// let language;
+// let languageOne;
 // language = 'Spanish';
-// population++;
+// // populationOne++;
 
 // let countryTwo = 'Finland';
 // let populationTwo = 6000000;
@@ -45,24 +46,35 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // let populationThree = 11000000;
 // const languageThree = 'Portugues';
 
-// let averagePop = 33000000;
+// const population = 130000000;
+// let belowPop = 33000000 - population;
+// let average;
+// if(population > 33000000) {
+//     average = `Population is above average`;
+// } else {
+//     belowPop = 33000000 - population;
+//     average = `The population is ${belowPop} less than the average`
+// };
+
+// console.log(belowPop);
+// console.log(average);
 
 // const description = `${countryThree} is in ${continentOne} and it's ${populationThree} people speak ${languageThree}.`;
-// const descriptionTwo = `I live in ${country} which is in ${continentOne} and has a ${population} of ${population}.`;
+// const descriptionTwo = `I live in ${countryOne} which is in ${continentOne} and has a population of ${populationOne}.`;
+
+// console.log(description);
+// console.log(descriptionTwo);
 
 // console.log(population / 2);
 // console.log(population);
 // console.log(population > populationTwo);
 // console.log(population < averagePop);
-// console.log(description);
 
 // console.log(typeof country);
 // console.log(typeof continent);
 // console.log(typeof population);
 // console.log(typeof isIsland);
 // console.log(language);
-
-// console.log(descriptionTwo);
 
 
 // (NOTES & PRACTICE)
