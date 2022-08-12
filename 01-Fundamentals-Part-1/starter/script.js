@@ -1,5 +1,5 @@
-// CODING CHALLENGE 1
-
+// CODING CHALLENGES
+// CHALLENGE 1
 /* Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height ** 2 || mass / (height * height). (mass in kg and height in meter).
 1. Store Mark's and John's mass and height in variables
 2. Calculate both their BMIs using the formula (you can even implement both versions)
@@ -7,24 +7,38 @@
 TEST DATA 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
 TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76 m tall. */
 
+// CHALLENGE 2
+// 1. Print a nice output to the console, saying who has the higher BMI. The message is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+// 2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+
 // let markMass = 78;
 // let markHeight = 1.69;
 // let johnMass = 92;
 // let johnHeight = 1.95;
 
-// let markMass = 95;
-// let markHeight = 1.88;
-// let johnMass = 85;
-// let johnHeight = 1.76;
+// markMass = 95;
+// markHeight = 1.88;
+// johnMass = 85;
+// johnHeight = 1.76;
 
 // const markBMI = markMass / markHeight ** 2;
 // const johnBMI = johnMass / (johnHeight * johnHeight);
-
 // const markHigherBMI = markBMI > johnBMI;
+
+// const diffBMI = markBMI - johnBMI;
+// let mostBMI;
+
+// if(markHigherBMI) {
+//     mostBMI = `Mark's BMI (${markBMI}) is ${diffBMI} more than John's (${johnBMI})!`;
+// } else {
+//     mostBMI = `John's BMI (${johnBMI}) is ${diffBMI} more than Mark's (${markBMI})!`
+// };
 
 // console.log(markBMI);
 // console.log(johnBMI);
 // console.log(markHigherBMI);
+// console.log(diffBMI);
+// console.log(mostBMI);
 
 
 // (END OF VIDEO TASKS)
