@@ -263,3 +263,66 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 //     century = 21
 // }
 // console.log(century);
+
+
+// TYPE CONVERSION & COERCION
+
+// Type conversion - MAnually convert from one type to another
+// Type coercion - JS automatically converts types
+
+// Type conversion:
+
+// const inputYear = '1991'; // String
+
+// console.log(inputYear + 18); // literally adds 18 to the end of 1991 = 199118
+// console.log(Number(inputYear)); // turns string into a number
+// console.log(Number(inputYear) + 18); // = 2009
+
+// console.log(Number(`Ryan`)); // NaN = Not A Number
+// console.log(typeof NaN); // a Number?
+
+// console.log(String(23), 23); // the first is a string and the second a number
+
+// // Type coercion
+
+// console.log(`I am ` + 40 + `yrs old`);
+// console.log(`I am ` + String(40) + `yrs old`);
+// console.log(`23` - `10` - 3); // minus, multiply & divide trigger automatic conversion
+// console.log(`23` * `2`);
+// console.log(`23` / `2`);
+
+// console.log(`23` + `10` + 3); // plus does not
+
+// let n = `1` + 1; // 11
+// n = n - 1; // 11 - 1 = 10
+// console.log(n);
+
+// console.log(`10` - `4` - `3` - 2 + `5`); // === 15
+
+
+// TRUTHY & FALSY VALUES
+
+// // Falsy values: 0, '', undefined, null, NaN.
+// console.log(Boolean(0));
+// console.log(Boolean(`Ryan`));
+// console.log(Boolean(undefined));
+// console.log(Boolean(null));
+// console.log(Boolean({}));
+// console.log(Boolean(NaN));
+
+// // Boolean example as 0 is falsy so JS will choose the later choice
+// // If number is changed to say 100 then this is a truthy & JS will choose the first choice
+// const money = 0;
+// if(money > 0) {
+//     console.log(`Dont'spend it all!!!`);
+// } else {
+//     console.log(`You have no money`);
+// }
+
+// // height will always be undefined as no value has been given
+// let height;
+// if(height) {
+//     console.log(`Height is defined`);
+// } else {
+//     console.log(`Height is undefined`);
+// }
