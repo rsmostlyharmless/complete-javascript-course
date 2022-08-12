@@ -47,7 +47,8 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 
 // let averagePop = 33000000;
 
-// const description = countryThree + ' is in ' + continentOne + ", and it's " + populationThree + ' people speak ' + languageThree + '.'
+// const description = `${countryThree} is in ${continentOne} and it's ${populationThree} people speak ${languageThree}.`;
+// const descriptionTwo = `I live in ${country} which is in ${continentOne} and has a ${population} of ${population}.`;
 
 // console.log(population / 2);
 // console.log(population);
@@ -61,7 +62,7 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // console.log(typeof isIsland);
 // console.log(language);
 
-// console.log('I live in ' + country + ' which is in ' + continentOne + ' and has a population of ' + population + '.')
+// console.log(descriptionTwo);
 
 
 // (NOTES & PRACTICE)
@@ -188,20 +189,20 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 
 // STRINGS AND TEMPLATE LITERALS
 
-const firstName = 'Ryan';
-const job = 'Student';
-const birthYear = 1986;
-const year = 2022;
+// const firstName = 'Ryan';
+// const job = 'Student';
+// const birthYear = 1986;
+// const year = 2022;
 
-const ryan = "Hi, I'm " + firstName + ", a " + (year - birthYear) + "yrs old " + job + ".";
-console.log(ryan);
+// const ryan = "Hi, I'm " + firstName + ", a " + (year - birthYear) + "yrs old " + job + ".";
+// console.log(ryan);
 
-const ryanNew = `Hi, I'm ${firstName}, a ${year - birthYear}yrs old ${job}.`;
-console.log(ryanNew);
+// const ryanNew = `Hi, I'm ${firstName}, a ${year - birthYear}yrs old ${job}.`;
+// console.log(ryanNew);
 
-console.log(`Just a regular string...`);
+// console.log(`Just a regular string...`);
 
-console.log("String with\nmultiple\nlines");
-console.log(`String with
-multiple
-lines`)
+// console.log("String with\nmultiple\nlines");
+// console.log(`String with
+// multiple
+// lines`);
