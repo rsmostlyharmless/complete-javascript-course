@@ -95,7 +95,8 @@ console.log(`9` - `5`); // === 4
 console.log(`19` - `13` + `17`); // === 617
 console.log(`19` - `13` + 17); // === 23
 console.log(`123` < 57); // === false
-console.log(5 + 6 + `4` + 9 - 4 - 2); // === 117
+console.log(5 + 6 + `4` + 9 - 4 - 2); // === 117 --- correct answer 1143
+// Numbers after the `4` are a seperate equation so the answer gets pushed to the end
 
 
 // (NOTES & PRACTICE)
