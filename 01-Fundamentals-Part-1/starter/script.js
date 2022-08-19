@@ -40,6 +40,41 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // console.log(diffBMI);
 // console.log(mostBMI);
 
+// CODING CHALLENGE 3
+// There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
+
+// 1. Calculate the average score for each team, using the test data below
+// 2. Compare the team's average scores to determine the winner of the competition,
+// and print it to the console. Don't forget that there can be a draw, so test for that
+// as well (draw means they have the same average score)
+// 3. Bonus1: Include a requirement for a minimum score of 100. With this rule, a
+// team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. Hint: Use a logical operator to test for minimum score, as well as multiple else - if blocks 😉
+// 4. Bonus2: Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy
+// Test data:
+// § Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+// § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123 § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+// const dolphins = Math.floor((96 + 108 + 89) / 3);
+// const koalas = Math.floor((88 + 91 + 110) / 3);
+
+const dolphins = Math.floor((97 + 112 + 101) / 3);
+const koalas = Math.floor((109 + 95 + 100) / 3);
+
+// const dolphins = Math.floor((97 + 112 + 101) / 3);
+// const koalas = Math.floor((109 + 95 + 106) / 3);
+
+console.log(dolphins);
+console.log(koalas);
+
+if (dolphins > koalas && dolphins >= 100) {
+    console.log(`Dolphins win!!!`)
+} else if (dolphins < koalas && koalas >= 100) {
+    console.log(`Koalas win!!!`)
+} else if (dolphins && koalas >= 100) {
+    console.log(`It's a draw!!!`)
+} else {
+    console.log(`Both teams loose!!!`)
+}
 
 // (END OF VIDEO TASKS)
 
@@ -91,12 +126,23 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // console.log(language);
 
 //Conversion or Coercion?
-console.log(`9` - `5`); // === 4
-console.log(`19` - `13` + `17`); // === 617
-console.log(`19` - `13` + 17); // === 23
-console.log(`123` < 57); // === false
-console.log(5 + 6 + `4` + 9 - 4 - 2); // === 117 --- correct answer 1143
+// console.log(`9` - `5`); // === 4
+// console.log(`19` - `13` + `17`); // === 617
+// console.log(`19` - `13` + 17); // === 23
+// console.log(`123` < 57); // === false
+// console.log(5 + 6 + `4` + 9 - 4 - 2); // === 117 --- correct answer 1143
 // Numbers after the `4` are a seperate equation so the answer gets pushed to the end
+
+//Equality Operators
+// const numNeighbours = prompt(`How many neighbour countries does your country have?`);
+// // const numNeighbours = 0;
+// if (numNeighbours == 1) {
+//     console.log(`Only one border!`)
+// } else if (numNeighbours >= 2) {
+//     console.log(`More than one border!!`)
+// } else {
+//     console.log(`0 borders!!!`)
+// }
 
 
 // (NOTES & PRACTICE)
@@ -333,4 +379,54 @@ console.log(5 + 6 + `4` + 9 - 4 - 2); // === 117 --- correct answer 1143
 //     console.log(`Height is defined`);
 // } else {
 //     console.log(`Height is undefined`);
+// }
+
+
+// EQUALITY OPERATORS
+
+// const age = 18;
+// if (age === 18) console.log(`Welcome to the jungle (Strict)`);
+
+// if (age == 18) console.log(`Welcome to the jungle (Loose)`);
+
+// const favourite = prompt(`What's your favourite number?`);
+// console.log(favourite);
+// console.log(typeof favourite);
+
+// if (favourite == 42) {
+//     alert(`The answer to life, the universe and everything!`)
+// } else if (favourite == 3) {
+//     alert(`3 is the magic number!`)
+// } else if (favourite == 54) {
+//     alert(`The answer to the question (6 * 9) of life, the universe and everything!`)
+// } else {
+//     alert(`That's all folks!!!`)
+// }
+
+// if (favourite != 42) console.log(`Mostly Harmless`);
+
+
+// BOOLEAN LOGIC
+
+// const hasDriversLicense = true;
+// const hasGoodVision = true;
+// const isTired = false;
+
+// console.log(hasDriversLicense && hasGoodVision && isTired);
+// console.log(hasDriversLicense || hasGoodVision || isTired);
+// console.log(!hasDriversLicense);
+// console.log(!hasGoodVision);
+// console.log(!isTired);
+
+// const shouldDrive = hasDriversLicense && hasGoodVision;
+// if (shouldDrive) {
+//     console.log(`Safe to drive!`)
+// } else {
+//     console.log(`Maybe someone else should drive...`);
+// }
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//     console.log(`Safe to drive!`)
+// } else {
+//     console.log(`Maybe someone else should drive...`);
 // }
