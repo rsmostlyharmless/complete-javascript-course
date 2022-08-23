@@ -57,24 +57,24 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 // const dolphins = Math.floor((96 + 108 + 89) / 3);
 // const koalas = Math.floor((88 + 91 + 110) / 3);
 
-const dolphins = Math.floor((97 + 112 + 101) / 3);
-const koalas = Math.floor((109 + 95 + 100) / 3);
+// const dolphins = Math.floor((97 + 112 + 101) / 3);
+// const koalas = Math.floor((109 + 95 + 100) / 3);
 
 // const dolphins = Math.floor((97 + 112 + 101) / 3);
 // const koalas = Math.floor((109 + 95 + 106) / 3);
 
-console.log(dolphins);
-console.log(koalas);
+// console.log(dolphins);
+// console.log(koalas);
 
-if (dolphins > koalas && dolphins >= 100) {
-    console.log(`Dolphins win!!!`)
-} else if (dolphins < koalas && koalas >= 100) {
-    console.log(`Koalas win!!!`)
-} else if (dolphins && koalas >= 100) {
-    console.log(`It's a draw!!!`)
-} else {
-    console.log(`Both teams loose!!!`)
-}
+// if (dolphins > koalas && dolphins >= 100) {
+//     console.log(`Dolphins win!!!`)
+// } else if (dolphins < koalas && koalas >= 100) {
+//     console.log(`Koalas win!!!`)
+// } else if (dolphins && koalas >= 100) {
+//     console.log(`It's a draw!!!`)
+// } else {
+//     console.log(`Both teams loose!!!`)
+// }
 
 // (END OF VIDEO TASKS)
 
@@ -143,6 +143,63 @@ if (dolphins > koalas && dolphins >= 100) {
 // } else {
 //     console.log(`0 borders!!!`)
 // }
+
+// LOGICAL OPERATORS
+// let unitedKingdom;
+// let canada;
+// let germany;
+// let iceland;
+
+// const country =`United Kingdom`;
+// const language = `English`;
+// const population = 67000000;
+// const island = true;
+
+// const country = `canada`;
+// const language = `English`;
+// const population = 38000000;
+// const island = false;
+
+// const country = `germany`;
+// const language = `German`;
+// const population = 83000000;
+// const island = false;
+
+// const country = `iceland`;
+// const language = `Iclandic`;
+// const population = 360000;
+// const island = true;
+
+// if (language === `English` && population < 50000000 && !island) {
+//     console.log(`The perfect place to live!!!`);
+// } else {
+//     console.log(`Let's look again!!!`);
+// }
+
+// The Switch Statement
+// const languages = `Spanish`;
+
+// switch (languages) {
+//     case `English`:
+//         console.log(`Most spoken language in the world!`);
+//         break;
+//     case `Mandarin`:
+//         console.log(`Second most spoken language in the world!`);
+//         break;
+//     case `Hindi`:
+//         console.log(`Third most spoken language in the world!`);
+//         break;
+//     case `Spanish`:
+//         console.log(`Fourth most spoken language in the world!`);
+//         break;
+//     default: console.log(`All other languages are great too!`)
+// }
+
+// The Conditional (Ternary) Operator
+// const population = 12000000;
+// console.log(`Your countries population is ${population < 33000000 ? `below` : `above`} average`);
+// const average = population < 33000000 ? `below` : `above`;
+// console.log(`Your population is ${average} average`);
 
 
 // (NOTES & PRACTICE)
@@ -430,3 +487,82 @@ if (dolphins > koalas && dolphins >= 100) {
 // } else {
 //     console.log(`Maybe someone else should drive...`);
 // }
+
+
+// SWITCH STATEMENT
+
+// const day = `friday`;
+
+// switch(day) {
+//     case `monday`:
+//         console.log(`buy mince and eggs`);
+//         break;
+//     case `tuesday`:
+//         console.log(`tye dye clothes`);
+//         break;
+//     case `wednesday`:
+//     case `thursday`:
+//         console.log(`study more`);
+//         break;
+//     case `friday`:
+//         console.log(`study and shop for the weekend`);
+//         break;
+//     case `saturday`:
+//     case `sunday`:
+//         console.log(`try to have fun`);
+//         break;
+//     default:
+//         console.log(`Invented a new day!`);
+// }
+
+// const days = `wednesday`;
+
+// if (days === `monday`) {
+//     console.log(`buy mince and eggs`)
+// } else if (days === `tuesday`) {
+//     console.log(`tye dye clothes`)
+// } else if (days === `wednesday` || `thursday`) {
+//     console.log(`study more`)
+// } else if (days === `friday`) {
+//     console.log(`study and shop for the weekend`)
+// } else if (days === `saturday` || `sunday`) {
+//     console.log(`try to have fun`)
+// } else {
+//     console.log(`Invented a new day!`)
+// }
+
+
+// STATEMENTS AND EXPRESSIONS
+
+// An expression produces a value e.g - 
+// 3 + 4
+// 1991
+// true && false && !false
+
+// A Statement is more like a paragraph of information 
+// to create an action e.g - 
+// if (20 > 21) {
+//     const str = `Then let there be chaos`;
+// }
+// console.log(`${str}`)
+// Likewise for switch statements
+
+
+// THE CONDITIONAL (TERNARY) OPERATOR
+
+// const age = 30;
+// age >= 18 ? console.log(`Old enough to drink alcohol`) : 
+// console.log(`Otherwise drink water`);
+
+// const drink = age >= 18 ? `Wine` : `Water`;
+// console.log(drink);
+
+// let drink2;
+// if (age >= 18) {
+//     drink2 = `Wine`;
+// } else {
+//     drink = `Water;`
+// }
+// console.log(drink2);
+
+// console.log(`I like to drink ${age >= 18 ? `Wine` : `Water`}`);
