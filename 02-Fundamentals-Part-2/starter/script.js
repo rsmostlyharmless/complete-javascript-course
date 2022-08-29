@@ -17,24 +17,24 @@
 // Test data:
 // § Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49 § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
 
-const calcAverage = (a, b, c) => (a + b + c) / 3;
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
 // console.log(calcAverage(12, 31, 10));
 // console.log(calcAverage(65, 54, 49));
 
-let finalScoreDol = calcAverage();
-let finalScoreKoa = calcAverage();
+// let finalScoreDol = calcAverage();
+// let finalScoreKoa = calcAverage();
 
-function checkWinner (avgDolphins, avgKoalas) {
-    if (avgDolphins >= (2 * avgKoalas)) {
-        console.log(`Dolphins win ${avgDolphins} : ${avgKoalas}`);
-    } else if (avgKoalas >= (2 * avgDolphins)) {
-        console.log(`Koalas win ${avgKoalas} : ${avgDolphins}`);
-    } else {
-        console.log(`No clear winner`);
-    }
-}
-checkWinner(finalScoreDol, finalScoreKoa);
-checkWinner(100, 222);
+// function checkWinner (avgDolphins, avgKoalas) {
+//     if (avgDolphins >= (2 * avgKoalas)) {
+//         console.log(`Dolphins win ${avgDolphins} : ${avgKoalas}`);
+//     } else if (avgKoalas >= (2 * avgDolphins)) {
+//         console.log(`Koalas win ${avgKoalas} : ${avgDolphins}`);
+//     } else {
+//         console.log(`No clear winner`);
+//     }
+// }
+// checkWinner(finalScoreDol, finalScoreKoa);
+// checkWinner(100, 222);
 
 
 // END OF VIDEO TASKS
@@ -57,7 +57,7 @@ checkWinner(100, 222);
 // function percentageOfWorld1 (population) {
 //     return ((population / 7900/*000000*/) * 100);
 // }
-// Calls above function percentageOfWorld
+// // Calls above function percentageOfWorld
 // function describePopulation (country, population) {
 //     const percentage = percentageOfWorld1(population);
 //     return (`${country} has about ${population} million people, which is roughly ${percentage.toFixed(2)}% of the world population.`);
@@ -92,6 +92,41 @@ checkWinner(100, 222);
 // console.log(finland1, finland2, finland3);
 // console.log(wales1, wales2, wales3);
 // console.log(sweden1, sweden2, sweden3);
+
+// ARRAYS
+// const countries = [`China`, `Finland`, `Wales`, `Sweden`];
+// console.log(countries);
+
+// const populations = [1441, 6, 3, 10];
+// console.log(populations);
+// console.log(populations.length === 5);
+
+// const allPecentages = [percentageOfWorld1(1441).toFixed(2), percentageOfWorld1(5).toFixed(2), percentageOfWorld1(3).toFixed(2), percentageOfWorld1(10).toFixed(2)];
+// console.log(allPecentages);
+
+// const allCountryValues = [[countries[0], populations[0], allPecentages[0]], [countries[1], populations[1], allPecentages[1]], [countries[2], populations[2], allPecentages[2]], [countries[3], populations[3], allPecentages[3]]];
+// console.log(allCountryValues);
+
+// const order = [allCountryValues[0], allCountryValues[1], allCountryValues[3], allCountryValues[2]];
+// console.log(order);
+
+// Basic array operations(methods)
+
+// const neighbours = [`Portugal`, `Andora`, `France`];
+// neighbours.push(`Utopia`);
+// console.log(neighbours)
+
+// neighbours.pop();
+// console.log(neighbours);
+
+// if (!neighbours.includes(`Germany`)) {
+//     console.log('Probably not a central European country :D');
+// }
+// console.log(neighbours);
+
+// neighbours[neighbours.indexOf(`Andora`)] = `New Utopia`;
+// console.log(neighbours);
+
 
 
 // NOTES
@@ -174,24 +209,104 @@ checkWinner(100, 222);
 // console.log(yearsUntilRetirement(2010, `Quinn`));
 
 // Functions Review
-function calcAge(birthYear) {
-    return 2037 - birthYear;
-}
+// function calcAge(birthYear) {
+//     return 2037 - birthYear;
+// }
 
-const yearsUntilRetirement = function (birthYear, firstName) {
-    const age = calcAge(birthYear);
-    const retirement = 65 - age;
+// const yearsUntilRetirement = function (birthYear, firstName) {
+//     const age = calcAge(birthYear);
+//     const retirement = 65 - age;
 
-    if (retirement <= 0) {
-        return `${firstName} has already retired!`
-    } else if (retirement > 65) {
-        return `I'm not sure ${firstName} born yet!`
-    } else {
-        return `${firstName} has ${retirement} years until retirement`;
-    }
-    // return `${firstName} retires in ${retirement} years`;
-}
+//     if (retirement <= 0) {
+//         return `${firstName} has already retired!`
+//     } else if (retirement > 65) {
+//         return `I'm not sure ${firstName} born yet!`
+//     } else {
+//         return `${firstName} has ${retirement} years until retirement`;
+//     }
+//     // return `${firstName} retires in ${retirement} years`;
+// }
 
-console.log(yearsUntilRetirement(1991, `Ryan`));
-console.log(yearsUntilRetirement(1970, `Amy`));
-console.log(yearsUntilRetirement(2040, `Quinn`))
+// console.log(yearsUntilRetirement(1991, `Ryan`));
+// console.log(yearsUntilRetirement(1970, `Amy`));
+// console.log(yearsUntilRetirement(2040, `Quinn`))
+
+
+// ARRAYS
+// An ARRAY is a grouping of information / values
+// const person1 = `Ryan`;
+// const person2 = `Amy`;
+// const person3 = `Quinn`;
+// // Turned into an ARRAY
+// const people = [`Ryan`, `Amy`, `Quinn`];
+
+// console.log(people[1]);
+// console.log(people.length);
+// console.log(people[people.length - 1]);
+
+// Changes `Ryan` to `That guy!`
+// people[0] = `That guy!`;
+// console.log(people);
+// people = [`That guy!`]; does not work!
+
+// const years = new Array(1980, 1990, 2000, 2010, 2020);
+// console.log(years[3])
+// console.log(years[years.length - 1]);
+// console.log(years.length - 1);
+
+// const firstName = `Ryan`;
+// const ryan = [firstName, `Syder`, 2022 - 1986, `Student`, people];
+// console.log(ryan);
+// console.log(ryan.length);
+
+// const calcAge = function (birthYear) {
+//         return 2022 - birthYear;
+//     }
+// const age1 = calcAge(years[0]);
+// console.log(age1);
+// const age2 = calcAge(years[1]);
+// console.log(age2);
+// const age3 = calcAge(years[2]);
+// console.log(age3);
+// const age4 = calcAge(years[years.length - 2]);
+// console.log(age4);
+// const age5 = calcAge(years[years.length - 1]);
+// console.log(age5);
+
+// const allYears = [calcAge(years[0]), calcAge(years[1]), calcAge(years[2]), calcAge(years[years.length - 2]), calcAge(years[years.length - 1])];
+// console.log(allYears);
+
+
+// Array Methods
+// Add elements
+// const people = [`Ryan`, `Amy`, `Quinn`];
+// const newPeople = people.push(`Bruce`);
+// console.log(people);
+// console.log(newPeople);
+
+// people.unshift(`Dick`);
+// console.log(people);
+
+// remove elements
+// people.pop();
+// const popped = people.pop();
+// console.log(people);
+// console.log(popped);
+
+// people.shift();
+// console.log(people);
+
+// console.log(people.indexOf(`Amy`));
+// console.log(people.indexOf(`Bruce`));
+
+// people.push(23);
+// console.log(people.includes(`Amy`));
+// console.log(people.includes(`Dick`));
+// console.log(people.includes(23)); // 23 - true : `23` false
+
+// if (people.includes(`Bruce`)) {
+//     console.log(`He's Batman!!`);
+// } else {
+//     console.log(`Don't trust the others!!!`);
+// }
+// console.log(people.includes(`Bruce`));
