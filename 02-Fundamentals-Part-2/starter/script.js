@@ -36,6 +36,8 @@
 // checkWinner(finalScoreDol, finalScoreKoa);
 // checkWinner(100, 222);
 
+
+
 // CHALLENGE 2
 // Steven is still building his tip calculator, using the same rules as before: Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
 // Your tasks:
@@ -44,22 +46,74 @@
 // 3. Create an array 'tips' containing the tip value for each bill,calculated from the function you created before.
 //4. Bonus: Create an array 'total' containing the total values, so the bill+tip.
 
-const calcTip = bills => bills >= 50 && bills <= 300 ? bills * 15 / 100 : bills * 20 / 100;
+// const calcTip = bills => bills >= 50 && bills <= 300 ? bills * 15 / 100 : bills * 20 / 100;
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(bills);
-console.log(tips);
-console.log(totals);
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(bills);
+// console.log(tips);
+// console.log(totals);
+
+
+
+// Challenge 3
+// Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter)
+// Your tasks:
+
+// 1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+// 2. Create a 'calcBMI' method on each object to calculate the BMI(the same method on both objects). Store the BMI value to a property, and also return it from the method
+// 3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+
+    // const fPerson = {
+    //     firstName: `Mark`,
+    //     lastName: `Miller`,
+    //     height: 1.69,
+    //     mass: 78,
+
+    //     calcBMI: function() {
+    //         this.BMI =  this.mass / this.height ** 2;
+    //         return this.BMI;
+    //     }
+    // }
+    // fPerson.calcBMI();
+    // console.log(fPerson.BMI.toFixed(2));
+    // console.log(fPerson.calcBMI().toFixed(2));
+
+    // const sPerson = {
+    //     firstName: `John`,
+    //     lastName: `Smith`,
+    //     height: 1.95,
+    //     mass: 92,
+
+    //     calcBMI: function() {
+    //         this.BMI = this.mass / (this.height * this.height);
+    //         return this.BMI;
+    //     }
+    // }
+
+    // const highestBMI = () => fPerson.calcBMI() > sPerson.calcBMI() ? `is higher` : `is lower`;
+    // console.log(`${fPerson.firstName} ${fPerson.lastName}'s BMI (${fPerson.calcBMI().toFixed(2)}) ${highestBMI()} than ${sPerson.firstName} ${sPerson.lastName}'s BMI (${sPerson.calcBMI().toFixed(2)}).`);
+
+    // if (fPerson.BMI > sPerson.BMI) {
+    //     console.log(`${fPerson.firstName} ${fPerson.lastName}'s BMI (${fPerson.calcBMI().toFixed(2)}) is higher than ${sPerson.firstName} ${sPerson.lastName}'s BMI (${sPerson.calcBMI().toFixed(2)}).`);
+    // } else {
+    //     console.log(`${sPerson.firstName} ${sPerson.lastName}'s BMI (${sPerson.calcBMI().toFixed(2)}) is higher than ${fPerson.firstName} ${fPerson.lastName}'s BMI (${fPerson.calcBMI().toFixed(2)}).`);
+    // }
+
+    // sPerson.calcBMI();
+    // console.log(sPerson.BMI.toFixed(2));
+    // console.log(sPerson.calcBMI().toFixed(2));
+    // console.log(highestBMI(fPerson.calcBMI(), sPerson.calcBMI()));
 
 
 
 
 // END OF VIDEO TASKS
 
-// Functions
 
+
+// Functions
 // function describeCountry (country, population, capitalCity) {
 //     const description = `${country} has ${population} people and it's capital city is ${capitalCity}.`;
 //     return description;
@@ -112,6 +166,8 @@ console.log(totals);
 // console.log(wales1, wales2, wales3);
 // console.log(sweden1, sweden2, sweden3);
 
+
+
 // ARRAYS
 // const countries = [`China`, `Finland`, `Wales`, `Sweden`];
 // console.log(countries);
@@ -148,6 +204,53 @@ console.log(totals);
 
 
 
+// OBJECT
+// const myCountry = {
+//     country: `Spain`,
+//     capital: `Madrid`,
+//     isIsland: false,
+//     language: `Spanish`,
+//     population: 47,
+//     neighbours: [`Portugal`, `Andora`, `France`],
+
+//     checkIsland: function () {
+//         return this.isIsland ? `no` : `${this.neighbours.length}`;
+//     },
+//     describe: function() {
+//         return `${this.country} has ${this.population} million ${this.language} speaking people, there are ${this.checkIsland()} neighbouring countries and its capital is called ${myCountry.capital}`
+//     }
+// };
+// console.log(myCountry.describe());
+// myCountry.population += 2;
+// myCountry[`population`] -= 2;
+// // Dot & Bracket notation
+// console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language} speaking people, ${myCountry.neighbours.length} neighbouring countries and its capital is called ${myCountry.capital}`)
+// console.log(myCountry);
+
+
+
+// The for loop
+// for ( let vote = 1; vote <= 50; vote++) {
+//     console.log(`The votes are coming in fast - ${vote} vote(s)`)
+// };
+
+
+
+// Looping arrays, Breaking, Continuing
+const population = [1441, 6, 3, 10];
+const percentage = [];
+for(let i = 0; i < population.length; i++) {
+    percentage.push((population[i] / 7900/*000000*/) * 100);//world percentage
+};
+console.log(percentage);
+console.log(percentage[0].toFixed(2));
+
+// function percentageOfWorld1 (percentage) {
+//     return ((percentage / 7900/*000000*/) * 100);
+// };
+
+
+
 // NOTES
 // Strict Mode
 
@@ -161,6 +264,7 @@ console.log(totals);
 // const interface = `Audio`;
 // const private = `number9`;
 // const if = 42;
+
 
 
 // Functions
@@ -251,6 +355,7 @@ console.log(totals);
 // console.log(yearsUntilRetirement(2040, `Quinn`))
 
 
+
 // ARRAYS
 // An ARRAY is a grouping of information / values
 // const person1 = `Ryan`;
@@ -329,3 +434,149 @@ console.log(totals);
 //     console.log(`Don't trust the others!!!`);
 // }
 // console.log(people.includes(`Bruce`));
+
+
+
+// Objects
+
+// const anArray = [
+//     `Ryan`,
+//     `Syder`,
+//     2022 - 1986,
+//     `student`,
+//     [`Life`, `Universe`, `Everything`]
+// ];
+// console.log(anArray);
+
+// Object literal - one way to write an object
+// const anObject = {
+//     firstName: `Ryan`,
+//     lastName: `Syder`,
+//     // age: 2022 - 1986,
+//     birthYear: 1986,
+//     job: `Student`,
+//     keyWords: [`Life`, `Universe`, `Everything`]
+// };
+
+// Dot vs Bracket notation
+// console.log(anObject);
+// console.log(anObject.lastName);
+// console.log(anObject[`lastName`]);
+
+// const nameKey = 'Name';
+// console.log(anObject[`first` + nameKey]);
+// console.log(anObject[`last` + nameKey]);
+
+// const randomInfo = prompt(`For information please type firstName, lastName, age, job, keyWords.`);
+// console.log(anObject[randomInfo]);
+// if(anObject[randomInfo]) {
+//     console.log(anObject[randomInfo]);
+// } else {
+//     console.log(`Try again!!!`)
+// }
+
+// anObject.location = `Spain`;
+// anObject[`greatBook`] = `Ready Player One`;
+
+// console.log(`${anObject.firstName} has ${anObject.keyWords.length} key words and his favourite one is ${anObject.keyWords[2]}!!!`);
+
+// Object Methods
+// const anObject = {
+//     firstName: `Ryan`,
+//     lastName: `Syder`,
+//     // age: 2022 - 1986,
+//     birthYear: 1986,
+//     job: `Student`,
+//     keyWords: [`Life`, `Universe`, `Everything`],
+//     driversLicense: true,
+    // Function expression used within the object method
+    // calcAge: function (birthYear) {
+    //     return 2022 - birthYear;
+
+    // .this points to the object (anObject)
+    // calcAge: function () {
+    //     // console.log(this);
+    //     return 2022 - this.birthYear;
+    // }
+    // calcAge: function () {
+    //     this.age = 2022 - this.birthYear;
+    //     return this.age;
+    // },
+    // hasDriversLicense: function () {
+    //     return this.driversLicense ? `a` : `no`;
+    // },
+    // getSummary: function () {
+    //     return `${this.firstName} is a ${this.calcAge()} yrs old ${this.job}, and ${this.hasDriversLicense()} drivers license.`
+    // }
+    // getSummary: function () {
+    //     return `${this.firstName} is a ${this.calcAge()} yrs old ${this.job}, and has ${this.driversLicense ? `a` : `no`} drivers license.`
+    // }
+// };
+// console.log(anObject.getSummary());
+// console.log(anObject.calcAge());
+// console.log(anObject.age);
+// dot notation
+// console.log(anObject.calcAge(1995));
+// Bracket notation
+// console.log(anObject[`calcAge`](2014));
+
+
+
+// Loops
+// console.log(`lifting 🏋️‍♂️ 2`);
+// console.log(`lifting 🏋️‍♂️ 3`);
+// console.log(`lifting 🏋️‍♂️ 4`);
+// console.log(`lifting 🏋️‍♂️ 5`);
+// console.log(`lifting 🏋️‍♂️ 6`);
+// console.log(`lifting 🏋️‍♂️ 7`);
+// console.log(`lifting 🏋️‍♂️ 8`);
+// console.log(`lifting 🏋️‍♂️ 9`);
+// console.log(`lifting 🏋️‍♂️10`);
+
+// for loop - keeps running while condition is true
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`lifting 🏋️‍♂️ ${rep}`);
+// };
+// for (let rep = 9; rep >= 1; rep--) {
+//     console.log(`lifting 🏋️‍♂️ ${rep}`);
+// };
+
+// Loopping arrays, Breaking & continuing
+// const anArray = [
+//     `Ryan`,
+//     `Syder`,
+//     2022 - 1986,
+//     `student`,
+//     [`Life`, `Universe`, `Everything`],
+//     true
+// ];
+// const types = [];
+// i starts at 0 and finishes at 5
+// Array starts at 0 & has less than 5 items
+// change the loop stop to the array name.length
+// this allows more content to be added
+// for(let i = 0; i < anArray.length; i++) {
+//     console.log(anArray[i], typeof anArray[i]);
+
+//     types[i] = typeof anArray[i];
+// };
+// console.log(types.push(typeof anArray));
+
+// const years = [1960, 1970, 1980, 1990, 2000];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//     ages.push(2022 - years[i]);
+// };
+// console.log(ages);
+
+// Continue - continues if not a string
+// for(let i = 0; i < anArray.length; i++) {
+//     if(typeof anArray[i] !== `string`) continue; // Only strings are listed
+//     console.log(anArray[i], typeof anArray[i]);
+// }
+// // Break - stops listing when a number is found
+// for(let i = 0; i < anArray.length; i++) {
+//     if(typeof anArray[i] === `number`) break; // Only 2 strings listed
+//     console.log(anArray[i], typeof anArray[i]);
+// }
