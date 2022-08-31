@@ -107,6 +107,39 @@
     // console.log(highestBMI(fPerson.calcBMI(), sPerson.calcBMI()));
 
 
+// Challenge 4
+// Your tasks:
+// 1. Create an array 'bills' containing all 10 test bill values.
+// 2. Create empty arrays for the tips and the totals ('tips' and 'totals').
+// 3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!.
+
+// Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
+
+// NEED TO TRY THIS AGAIN!!! FAIL!!!
+// const calcTip = bills => bills >= 50 && bills <= 300 ? bills * 15 / 100 : bills * 20 / 100;
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+
+// for (let i = 0; i < bills.length; i++) {
+//     const tip = calcTip(bills[i]);
+//     tips.push(tip);
+//     totals.push(tip + bills[i]);
+// };
+// console.log(bills, tips, totals);
+
+// const calAverage = function(arr) {
+//     let sum = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum / arr.length
+// }
+// console.log(calAverage(bills));
+// console.log(calAverage(tips));
+// console.log(calAverage(totals));
+
 
 
 // END OF VIDEO TASKS
@@ -237,16 +270,42 @@
 
 
 // Looping arrays, Breaking, Continuing
-const population = [1441, 6, 3, 10];
-const percentage = [];
-for(let i = 0; i < population.length; i++) {
-    percentage.push((population[i] / 7900/*000000*/) * 100);//world percentage
-};
-console.log(percentage);
-console.log(percentage[0].toFixed(2));
+// const population = [1441, 6, 3, 10];
+// const percentage = [];
+// for(let i = 0; i < population.length; i++) {
+//     percentage.push((population[i] / 7900/*000000*/) * 100);//world percentage
+// };
+// console.log(percentage);
+// console.log(percentage[0].toFixed(2));
 
 // function percentageOfWorld1 (percentage) {
 //     return ((percentage / 7900/*000000*/) * 100);
+// };
+
+
+
+// Looping backwards & Loops in loops
+// const listOfNeighbours = [[`Canada`, `Mexico`], [`Spain`], [`Norway`, `Sweden`, `Russia`]];
+
+// for (let i = 0; i < listOfNeighbours.length; i++) {
+//     for (let j = 0; j < listOfNeighbours[i].length; j++) {
+//         console.log(listOfNeighbours[i][j]);
+//     };
+// };
+// The main loop searches the first array[3]
+// and the second loop goes into the sub-arrays
+
+
+
+// While loop
+// const population = [1441, 6, 3, 10];
+// const whilePercentage = [];
+
+// let i = 0;
+// while (i < population.length) {
+//     whilePercentage.push((population[i] / 7900/*000000*/) * 100);
+//     console.log(whilePercentage[i].toFixed(2));
+//     i++
 // };
 
 
@@ -579,4 +638,54 @@ console.log(percentage[0].toFixed(2));
 // for(let i = 0; i < anArray.length; i++) {
 //     if(typeof anArray[i] === `number`) break; // Only 2 strings listed
 //     console.log(anArray[i], typeof anArray[i]);
+// }
+
+
+
+// Looping backwards & Loops in loops
+
+// const anArray = [
+//     `Ryan`,
+//     `Syder`,
+//     2022 - 1986,
+//     `student`,
+//     [`Life`, `Universe`, `Everything`],
+//     true
+// ];
+
+// for (let i = anArray.length - 1; i >= 0; i--) {
+//     console.log(i, anArray[i]);
+// };
+
+// for (let exercise = 1; exercise < 4; exercise++){
+//     console.log(`----Starting Exercise ${exercise}----`);
+
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(`----Lift 🏋️‍♂️ ${rep}----`);
+//     }
+// }
+
+
+
+// While loop
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`lifting 🏋️‍♂️ ${rep}`);
+// };
+
+// transformed the for loop to a while loop
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`lifting 🏋️‍♂️ ${rep}`);
+//     rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// // console.log(dice);
+
+// while (dice !== 6) {
+//     console.log(`You rolled a ${dice}`)
+//     dice = Math.trunc(Math.random() * 6) + 1;
+
+//     if (dice === 6)
+//     console.log(`End of turn! ${dice}`);
 // }
