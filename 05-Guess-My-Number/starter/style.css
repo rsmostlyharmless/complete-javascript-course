@@ -114,6 +114,7 @@ h1 {
   height: 3rem;
 }
 
-.label-score {
+.label-score,
+.label-counter {
   margin-bottom: 2rem;
 }
