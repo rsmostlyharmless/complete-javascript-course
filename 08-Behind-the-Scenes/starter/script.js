@@ -96,34 +96,86 @@
 // Arrow functions 👉 this = <this of surrounding function(lexical this)>
 // Event listener 👉 this = <DOM element that the handler is attched to>
 
-console.log(this);
+// console.log(this);
 
-const calcAge = function (birthYear) {
-  console.log(2022 - birthYear);
-  console.log(this);
-};
-calcAge(1986);
+// const calcAge = function (birthYear) {
+//   console.log(2022 - birthYear);
+//   console.log(this);
+// };
+// calcAge(1986);
 
-const calcAgeArrow = birthYear => {
-  console.log(2022 - birthYear);
-  console.log(this);
-};
-calcAgeArrow(1986);
+// const calcAgeArrow = birthYear => {
+//   console.log(2022 - birthYear);
+//   console.log(this);
+// };
+// calcAgeArrow(1986);
 
-const ryan = {
-  year: 1986,
-  calcAge: function () {
-    console.log(this);
-    console.log(2022 - this.year);
-  },
-};
-ryan.calcAge();
+// const ryan = {
+//   year: 1986,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2022 - this.year);
+//   },
+// };
+// ryan.calcAge();
 
-const amy = {
-  year: 1989,
-};
-amy.calcAge = ryan.calcAge;
-amy.calcAge();
+// const amy = {
+//   year: 1989,
+// };
+// amy.calcAge = ryan.calcAge;
+// amy.calcAge();
 
 // const f = ryan.calcAge;
 // f(); undefined as can no longer read the function call
+//
+//
+//
+// this keyword - regular functions vs arrow functions
+
+var firstName = `Amy`;
+
+const ryan = {
+  firstName: `Ryan`,
+  year: 1986,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2022 - this.year);
+
+    // Solution 1
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self);
+    //   //   console.log(this.year >= 1981 && this.year <= 1996);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    // Solution 2
+    // the arrow function now works as THIS reads the parent function
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+  //   arrow function does not get it's own THIS method
+  //   recommended not to use arrow functions as a method
+  //   greet: () => console.log(`Hey, ${this.firstName}!`),
+  greet: function () {
+    console.log(`Hey, ${this.firstName}!`);
+  },
+};
+ryan.greet();
+ryan.calcAge();
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 3);
+addExpr(2, 5, 8, 12);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 5);
