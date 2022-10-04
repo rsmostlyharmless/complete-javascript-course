@@ -1,5 +1,6 @@
 'use strict';
 
+// SCOPE
 const calcAge = function (birthYear) {
   const age = 2022 - birthYear;
 
@@ -35,3 +36,52 @@ const calcAge = function (birthYear) {
 const firstName = `Ryan`;
 calcAge(1986);
 // console.log(age); Uncaught ref error as age is not in scope
+//
+//
+//
+//
+// HOISTING AND THE DEAD ZONE
+
+// variables
+// console.log(me); // Undefined
+// console.log(job); // Uncaught ReferenceError
+// console.log(birth); // Uncaught ReferenceError
+
+var me = `Ryan`;
+let job = `Student`;
+const birth = 1986;
+
+// functions
+// console.log(addDecl(2, 3)); // declaration found
+// console.log(addExpr(2, 3)); // Uncaught reference error
+// console.log(addArrow(2, 3)); // Undefined
+
+function addDecl(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+var addArrow = (a, b) => a + b;
+
+// hoisting example
+// console.log(undefined); falsy value
+
+deleteShoppingCart;
+if (!numProducts) deleteShoppingCart();
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log(`All products deleted!`);
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(y === window.y);
+console.log(z === window.z);
