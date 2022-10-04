@@ -132,50 +132,113 @@
 //
 // this keyword - regular functions vs arrow functions
 
-var firstName = `Amy`;
+// var firstName = `Amy`;
 
-const ryan = {
-  firstName: `Ryan`,
-  year: 1986,
-  calcAge: function () {
-    // console.log(this);
-    console.log(2022 - this.year);
+// const ryan = {
+//   firstName: `Ryan`,
+//   year: 1986,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2022 - this.year);
 
-    // Solution 1
-    // const self = this;
-    // const isMillenial = function () {
-    //   console.log(self);
-    //   //   console.log(this.year >= 1981 && this.year <= 1996);
-    //   console.log(self.year >= 1981 && self.year <= 1996);
-    // };
+// Solution 1
+// const self = this;
+// const isMillenial = function () {
+//   console.log(self);
+//   //   console.log(this.year >= 1981 && this.year <= 1996);
+//   console.log(self.year >= 1981 && self.year <= 1996);
+// };
 
-    // Solution 2
-    // the arrow function now works as THIS reads the parent function
-    const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
-    };
-    isMillenial();
-  },
-  //   arrow function does not get it's own THIS method
-  //   recommended not to use arrow functions as a method
-  //   greet: () => console.log(`Hey, ${this.firstName}!`),
-  greet: function () {
-    console.log(`Hey, ${this.firstName}!`);
-  },
+// Solution 2
+// the arrow function now works as THIS reads the parent function
+// const isMillenial = () => {
+//   console.log(this);
+//   console.log(this.year >= 1981 && this.year <= 1996);
+// };
+// isMillenial();
+//   },
+//   arrow function does not get it's own THIS method
+//   recommended not to use arrow functions as a method
+//   greet: () => console.log(`Hey, ${this.firstName}!`),
+//   greet: function () {
+//     console.log(`Hey, ${this.firstName}!`);
+//   },
+// };
+// ryan.greet();
+// ryan.calcAge();
+
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 3);
+// addExpr(2, 5, 8, 12);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow(2, 5);
+//
+
+//
+
+//
+// PRIMATIVES VS REFERENCE TYPES
+// let age = 30;
+// let oldAge = age;
+// age = 31;
+// console.log(age);
+// console.log(oldAge);
+
+// const me = {
+//   name: `Ryan`,
+//   age: 30,
+// };
+
+// const friend = me;
+// friend.age = 27;
+// console.log(`Friend:`, friend);
+// console.log(`Me: `, me);
+
+// Practise
+
+// Primative types
+let lastName = `Williams`;
+let oldLastName = lastName;
+lastName = `Davies`;
+console.log(lastName, oldLastName);
+
+// Reference types
+const jessica = {
+  firstName: `Jessica`,
+  lastName: `Williams`,
+  age: 27,
 };
-ryan.greet();
-ryan.calcAge();
 
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-addExpr(2, 3);
-addExpr(2, 5, 8, 12);
+const marriedJessica = jessica;
+marriedJessica.lastName = `Davies`;
+console.log(`Before marriage:`, jessica);
+console.log(`After marriage:`, marriedJessica);
 
-var addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b;
+// marriedJessica = {}; constant variable in the stack can not be changed
+
+// Copying objects
+const jessica2 = {
+  firstName: `jessica`,
+  lastName: `Williams`,
+  age: 27,
+  family: [`Alice`, `Bob`],
 };
-addArrow(2, 5);
+
+// shallow copy created
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = `Davies`;
+console.log(`Before marriage:`, jessica2);
+console.log(`After marriage:`, jessicaCopy);
+
+jessicaCopy.family.push(`Mary`);
+jessicaCopy.family.push(`Joseph`);
+
+console.log(`Before marriage:`, jessica2);
+console.log(`After marriage:`, jessicaCopy);
