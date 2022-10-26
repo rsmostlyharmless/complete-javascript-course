@@ -53,43 +53,78 @@ const restaurant = {
     console.log(otherIngr);
   },
 };
+//
+// Short circuiting (&& and ||)
+
+console.log(`----- OR -----`);
+// Use any data type, return any data type
+// all will return truthy values
+console.log(3 || `Ryan`);
+console.log(`` || `Ryan`);
+console.log(true || 0);
+console.log(undefined || null);
+// The first truthy value is `Hello`
+console.log(undefined || 0 || `` || `Hello` || 23 || null);
+
+// result will always be the number if value is not defined
+// default number can be overridden
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+// easier way to write the above statement
+// The results are the same
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log(`----- AND -----`);
+// the && operator returns falsy values
+console.log(0 && `Ryan`);
+console.log(7 && `Ryan`);
+// the first falsy value is null
+console.log(`Hello` && 23 && null && `Ryan`);
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza(`Mushrooms`, `Olives`);
+}
+
+restaurant.orderPizza && restaurant.orderPizza(`Mushrooms`, `Olives`);
 
 // Rest Operator
 
 // Destructuring
 // spread as on right side of =
-const arr = [1, 2, ...[3, 4]];
-// rest as on left side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// const arr = [1, 2, ...[3, 4]];
+// // rest as on left side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-// Rest element must be last element
-const [pizza, , risotto, ...otherFood /*, bread*/] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// // Rest element must be last element
+// const [pizza, , risotto, ...otherFood /*, bread*/] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-// Objects
-const { sat, ...weekDays } = restaurant.openingHours;
-console.log(weekDays);
+// // Objects
+// const { sat, ...weekDays } = restaurant.openingHours;
+// console.log(weekDays);
 
-//
-// Functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
+// //
+// // Functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
 
-add(2, 3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 3, 2, 1, 4);
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 2, 1, 4);
 
-const x = [23, 5, 7];
-add(...x);
-// mushrooms main ingredient, other in other.
-restaurant.orderPizza(`mushrooms`, `onion`, `olives`, `spinach`);
+// const x = [23, 5, 7];
+// add(...x);
+// // mushrooms main ingredient, other in other.
+// restaurant.orderPizza(`mushrooms`, `onion`, `olives`, `spinach`);
 
 /////////////////////////////////////////
 //
