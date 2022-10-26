@@ -47,30 +47,77 @@ const restaurant = {
       `Here is your delicious pasta made with ${ing1}, ${ing2} & ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngr, ...otherIngr) {
+    console.log(mainIngr);
+    console.log(otherIngr);
+  },
 };
-const newMenu = [...restaurant.mainMenu, `Gnocci`];
-console.log(...newMenu);
 
-// copy array
-const mainMenuCopy = [...restaurant.mainMenu];
+// Rest Operator
 
-// joining arrays
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// Destructuring
+// spread as on right side of =
+const arr = [1, 2, ...[3, 4]];
+// rest as on left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-const newArr = [1, 2, arr];
-const spreadArr = [1, 2, ...arr];
-console.log(badNewArr); // Old way to add to an existing array
-console.log(newArr); // places the original array next to the new
-console.log(...spreadArr); // easier way to add to the existing array
+// Rest element must be last element
+const [pizza, , risotto, ...otherFood /*, bread*/] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(weekDays);
+
+//
+// Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+// mushrooms main ingredient, other in other.
+restaurant.orderPizza(`mushrooms`, `onion`, `olives`, `spinach`);
+
+/////////////////////////////////////////
+//
+// Spread Operator
+//
+// const newMenu = [...restaurant.mainMenu, `Gnocci`];
+// console.log(...newMenu);
+
+// // copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// // joining arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// const newArr = [1, 2, arr];
+// const spreadArr = [1, 2, ...arr];
+// console.log(badNewArr); // Old way to add to an existing array
+// console.log(newArr); // places the original array next to the new
+// console.log(...spreadArr); // easier way to add to the existing array
 
 // iterables = Strings, Arrays, Maps, Sets - But not Objects
-const str = `Syder`;
-const letters = [`R.`, ``, ...str];
-console.log(letters);
-console.log(...str);
+// const str = `Syder`;
+// const letters = [`R.`, ``, ...str];
+// console.log(letters);
+// console.log(...str);
 // console.log(`${...str} was here!`); Does not work
 
 // const ingredients = [
@@ -84,13 +131,13 @@ console.log(...str);
 // restaurant.orderPasta(...ingredients);
 
 // Objects
-const newRestaurant = { foundedIn: 2005, ...restaurant, founder: `Bob` };
-console.log(newRestaurant);
+// const newRestaurant = { foundedIn: 2005, ...restaurant, founder: `Bob` };
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = `Bob's Burgers`;
-console.log(restaurant.name);
-console.log(restaurantCopy.name);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = `Bob's Burgers`;
+// console.log(restaurant.name);
+// console.log(restaurantCopy.name);
 
 //////////////////////////////////////
 // restaurant.orderDelivery({
