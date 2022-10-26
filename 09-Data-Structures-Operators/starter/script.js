@@ -54,40 +54,86 @@ const restaurant = {
   },
 };
 //
+
+// &&, ||, ?? Logical Assignment Operators
+
+const rest1 = {
+  name: `Roastery`,
+  // numGuests: 20,
+  numGuests: 0, //number will still be 10 with OR operator. Use ??=
+};
+
+const rest2 = {
+  name: `Burgery`,
+  owner: `Sterling Archer`,
+};
+
+// ||= OR Assignment Operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// ??= NULLISH Assignment Operator
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// &&= AND Assignment Operator
+// rest1.owner = rest1.owner && `<ANONYMOUS>`; // adds owner - undefined to rest1
+// rest2.owner = rest2.owner && `<ANONYMOUS>`;
+// rest1.owner &&= `<ANONYMOUS>`; // Will only add if result is truthy
+// rest2.owner &&= `<ANONYMOUS>`;
+
+// console.log(rest1);
+// console.log(rest2);
+
+/////////////////////////////////////////
+
+//
+// // The nullish coalescing operator
+// // Nullish: Null and Undefined (NOT 0 or ``)
+// restaurant.numGuests = 0;
+// const guest = restaurant.numGuests || 10;
+// console.log(guest);
+
+// const guestsCorrect = restaurant.numGuests ?? 10;
+// console.log(guestsCorrect);
+
+//
 // Short circuiting (&& and ||)
 
-console.log(`----- OR -----`);
-// Use any data type, return any data type
-// all will return truthy values
-console.log(3 || `Ryan`);
-console.log(`` || `Ryan`);
-console.log(true || 0);
-console.log(undefined || null);
-// The first truthy value is `Hello`
-console.log(undefined || 0 || `` || `Hello` || 23 || null);
+// console.log(`----- OR -----`);
+// // Use any data type, return any data type
+// // all will return truthy values
+// console.log(3 || `Ryan`);
+// console.log(`` || `Ryan`);
+// console.log(true || 0);
+// console.log(undefined || null);
+// // The first truthy value is `Hello`
+// console.log(undefined || 0 || `` || `Hello` || 23 || null);
 
-// result will always be the number if value is not defined
-// default number can be overridden
-// restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
-// easier way to write the above statement
-// The results are the same
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
+// // result will always be the number if value is not defined
+// // default number can be overridden
+// // restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+// // easier way to write the above statement
+// // The results are the same
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
 
-console.log(`----- AND -----`);
-// the && operator returns falsy values
-console.log(0 && `Ryan`);
-console.log(7 && `Ryan`);
-// the first falsy value is null
-console.log(`Hello` && 23 && null && `Ryan`);
+// console.log(`----- AND -----`);
+// // the && operator returns falsy values
+// console.log(0 && `Ryan`);
+// console.log(7 && `Ryan`);
+// // the first falsy value is null
+// console.log(`Hello` && 23 && null && `Ryan`);
 
-if (restaurant.orderPizza) {
-  restaurant.orderPizza(`Mushrooms`, `Olives`);
-}
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza(`Mushrooms`, `Olives`);
+// }
 
-restaurant.orderPizza && restaurant.orderPizza(`Mushrooms`, `Olives`);
+// restaurant.orderPizza && restaurant.orderPizza(`Mushrooms`, `Olives`);
 
 // Rest Operator
 
