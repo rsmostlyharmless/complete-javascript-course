@@ -70,15 +70,10 @@ const players1 = [...game.players[0]];
 const players2 = [...game.players[1]];
 const gk = [players1[0]];
 const [, ...fieldPlayers] = [...game.players[0]];
-const allPlayers = [...game.players[0], ...game.players[1]];
+const allPlayers = [...players1, ...players2];
 const player1Final = [...players1, `Thiago`, `Coutinho`, `Perisic`];
-const { x, team2, ...team1 } = game.odds;
-const {} = game.odds;
-// const team2 = { ...game.odds };
-
-// // Objects
-// const { sat, ...weekDays } = restaurant.openingHours;
-// console.log(weekDays);
+const { team1, x: draw, team2 } = game.odds;
+// const draw = game.odds.x;
 
 console.log(players1);
 console.log(players2);
@@ -88,7 +83,18 @@ console.log(allPlayers);
 console.log(player1Final);
 console.log(team1);
 console.log(draw);
-console.log();
+console.log(team2);
+
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(`${players.length} goals were scored`);
+};
+printGoals(`Davies`, `Muller`);
+printGoals(`Davies`, `Muller`, 'Lewandowski', 'Kimmich');
+printGoals(...game.scored);
+
+team1 < team2 && console.log(`Team 1 likely to win`);
+team1 > team2 && console.log(`Team 2 likely to win`);
 
 //
 //////////////////////////////////////////////////////////
