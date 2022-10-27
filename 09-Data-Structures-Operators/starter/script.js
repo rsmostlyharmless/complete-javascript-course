@@ -25,76 +25,76 @@ Suppose we get data from a web service about a certain game ('game' variable on 
 
 Test data for 6: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored.
 */
-const game = {
-  team1: `Bayern Munich`,
-  team2: `Borrusia Dormund`,
-  players: [
-    [
-      `Neuer`,
-      `Pavard`,
-      `Martinez`,
-      `Alaba`,
-      `Davies`,
-      `Kimmich`,
-      `Goretzka`,
-      `Coman`,
-      `Muller`,
-      `Gnarby`,
-      `Lewandowski`,
-    ],
-    [
-      `Burki`,
-      `Schultz`,
-      `Hummels`,
-      `Akanji`,
-      `Hakimi`,
-      `Weigl`,
-      `Witsel`,
-      `Hazard`,
-      `Brandt`,
-      `Sancho`,
-      `Gotze`,
-    ],
-  ],
-  score: `4:0`,
-  scored: [`Lewandowski`, `Gnarby`, `Lewandowski`, `Hummels`],
-  date: `Nov 9th, 2037`,
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: `Bayern Munich`,
+//   team2: `Borrusia Dormund`,
+//   players: [
+//     [
+//       `Neuer`,
+//       `Pavard`,
+//       `Martinez`,
+//   `Alaba`,
+//   `Davies`,
+//   `Kimmich`,
+//   `Goretzka`,
+//   `Coman`,
+//   `Muller`,
+//   `Gnarby`,
+//   `Lewandowski`,
+// ],
+// [
+//   `Burki`,
+//   `Schultz`,
+//   `Hummels`,
+//   `Akanji`,
+//   `Hakimi`,
+//   `Weigl`,
+//   `Witsel`,
+//   `Hazard`,
+//   `Brandt`,
+//   `Sancho`,
+//   `Gotze`,
+// ],
+//   ],
+//   score: `4:0`,
+//   scored: [`Lewandowski`, `Gnarby`, `Lewandowski`, `Hummels`],
+//   date: `Nov 9th, 2037`,
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-const players1 = [...game.players[0]];
-const players2 = [...game.players[1]];
-const gk = [players1[0]];
-const [, ...fieldPlayers] = [...game.players[0]];
-const allPlayers = [...players1, ...players2];
-const player1Final = [...players1, `Thiago`, `Coutinho`, `Perisic`];
-const { team1, x: draw, team2 } = game.odds;
-// const draw = game.odds.x;
+// const players1 = [...game.players[0]];
+// const players2 = [...game.players[1]];
+// const gk = [players1[0]];
+// const [, ...fieldPlayers] = [...game.players[0]];
+// const allPlayers = [...players1, ...players2];
+// const player1Final = [...players1, `Thiago`, `Coutinho`, `Perisic`];
+// const { team1, x: draw, team2 } = game.odds;
+// // const draw = game.odds.x;
 
-console.log(players1);
-console.log(players2);
-console.log(gk);
-console.log(fieldPlayers);
-console.log(allPlayers);
-console.log(player1Final);
-console.log(team1);
-console.log(draw);
-console.log(team2);
+// console.log(players1);
+// console.log(players2);
+// console.log(gk);
+// console.log(fieldPlayers);
+// console.log(allPlayers);
+// console.log(player1Final);
+// console.log(team1);
+// console.log(draw);
+// console.log(team2);
 
-const printGoals = function (...players) {
-  console.log(players);
-  console.log(`${players.length} goals were scored`);
-};
-printGoals(`Davies`, `Muller`);
-printGoals(`Davies`, `Muller`, 'Lewandowski', 'Kimmich');
-printGoals(...game.scored);
+// const printGoals = function (...players) {
+//   console.log(players);
+//   console.log(`${players.length} goals were scored`);
+// };
+// printGoals(`Davies`, `Muller`);
+// printGoals(`Davies`, `Muller`, 'Lewandowski', 'Kimmich');
+// printGoals(...game.scored);
 
-team1 < team2 && console.log(`Team 1 likely to win`);
-team1 > team2 && console.log(`Team 2 likely to win`);
+// team1 < team2 && console.log(`Team 1 likely to win`);
+// team1 > team2 && console.log(`Team 2 likely to win`);
 
 //
 //////////////////////////////////////////////////////////
@@ -154,18 +154,31 @@ const restaurant = {
 };
 //
 
+// FOR-OF LOOP
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const list of menu) console.log(list);
+
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+// console.log([...menu.entries()]);
+
+/////////////////////////////////////////////
+
 // &&, ||, ?? Logical Assignment Operators
 
-const rest1 = {
-  name: `Roastery`,
-  // numGuests: 20,
-  numGuests: 0, //number will still be 10 with OR operator. Use ??=
-};
+// const rest1 = {
+//   name: `Roastery`,
+//   // numGuests: 20,
+//   numGuests: 0, //number will still be 10 with OR operator. Use ??=
+// };
 
-const rest2 = {
-  name: `Burgery`,
-  owner: `Sterling Archer`,
-};
+// const rest2 = {
+//   name: `Burgery`,
+//   owner: `Sterling Archer`,
+// };
 
 // ||= OR Assignment Operator
 // rest1.numGuests = rest1.numGuests || 10;
