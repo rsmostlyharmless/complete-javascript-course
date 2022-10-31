@@ -25,46 +25,46 @@ Suppose we get data from a web service about a certain game ('game' variable on 
 
 Test data for 6: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored.
 */
-// const game = {
-//   team1: `Bayern Munich`,
-//   team2: `Borrusia Dormund`,
-//   players: [
-//     [
-//       `Neuer`,
-//       `Pavard`,
-//       `Martinez`,
-//   `Alaba`,
-//   `Davies`,
-//   `Kimmich`,
-//   `Goretzka`,
-//   `Coman`,
-//   `Muller`,
-//   `Gnarby`,
-//   `Lewandowski`,
-// ],
-// [
-//   `Burki`,
-//   `Schultz`,
-//   `Hummels`,
-//   `Akanji`,
-//   `Hakimi`,
-//   `Weigl`,
-//   `Witsel`,
-//   `Hazard`,
-//   `Brandt`,
-//   `Sancho`,
-//   `Gotze`,
-// ],
-//   ],
-//   score: `4:0`,
-//   scored: [`Lewandowski`, `Gnarby`, `Lewandowski`, `Hummels`],
-//   date: `Nov 9th, 2037`,
-//   odds: {
-//     team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-// };
+const game = {
+  team1: `Bayern Munich`,
+  team2: `Borrusia Dormund`,
+  players: [
+    [
+      `Neuer`,
+      `Pavard`,
+      `Martinez`,
+      `Alaba`,
+      `Davies`,
+      `Kimmich`,
+      `Goretzka`,
+      `Coman`,
+      `Muller`,
+      `Gnarby`,
+      `Lewandowski`,
+    ],
+    [
+      `Burki`,
+      `Schultz`,
+      `Hummels`,
+      `Akanji`,
+      `Hakimi`,
+      `Weigl`,
+      `Witsel`,
+      `Hazard`,
+      `Brandt`,
+      `Sancho`,
+      `Gotze`,
+    ],
+  ],
+  score: `4:0`,
+  scored: [`Lewandowski`, `Gnarby`, `Lewandowski`, `Hummels`],
+  date: `Nov 9th, 2037`,
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
 // const players1 = [...game.players[0]];
 // const players2 = [...game.players[1]];
@@ -96,6 +96,29 @@ Test data for 6: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmi
 // team1 < team2 && console.log(`Team 1 likely to win`);
 // team1 > team2 && console.log(`Team 2 likely to win`);
 
+/*
+// CHALLENGE 2
+
+Your tasks:
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski").
+
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember).
+
+3. Print the 3odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33 Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). Hint: Note how the odds and the game objects have the same property names 😉.
+
+4. Bonus: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+     {
+       Gnarby: 1,
+       Hummels: 1,
+       Lewandowski: 2
+} */
+
+//
+//////////////////////////////////////////////////////////
 //
 //////////////////////////////////////////////////////////
 
@@ -110,11 +133,11 @@ const openingHours = {
     open: 12,
     close: 22,
   },
-  fri: {
+  Fri: {
     open: 11,
     close: 23,
   },
-  sat: {
+  Sat: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -158,7 +181,68 @@ const restaurant = {
     console.log(otherIngr);
   },
 };
-console.log(restaurant);
+
+// // Looping Objects: Object keys, values & entries
+// // Property names
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+
+// let openStr = `We are open on ${properties.length} days`;
+
+// for (const day of properties) {
+//   openStr += `, ${day}`;
+// }
+// console.log(openStr);
+
+// // Property values
+// const value = Object.values(openingHours);
+// console.log(value);
+
+// const entry = Object.entries(openingHours);
+// console.log(entry);
+
+// for (const [key, { open, close }] of entry) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
+
+//
+/////////////////////////////////////////
+//
+
+// Optional Chaining
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon.open);
+
+// // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+
+// // WITH optional chaining
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
+
+// EXAMPLE
+// const days = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, `Sun`];
+// FOR-OF LOOP
+// for (const day of weekdays) {
+//   const open = restaurant.openingHours[day]?.open ?? `closed`;
+//   console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // Methods
+// console.log(restaurant.order?.(0, 1) ?? `Method does not exist`);
+// console.log(restaurant.orderRisotto?.(0, 1) ?? `Method does not exist`);
+
+// // Arrays
+// const users = [
+//   {
+//     name: `Ryan`,
+//     email: `r.s@gmail.uk`,
+//   },
+// ];
+// console.log(users[0]?.name ?? `User array empty`);
+// console.log(users[3]?.name ?? `User array empty`);
+
+// if (users.length > 0) console.log(users[0]?.name);
+// else console.log(`User array empty`);
 
 //
 //////////////////////////////////////////////
