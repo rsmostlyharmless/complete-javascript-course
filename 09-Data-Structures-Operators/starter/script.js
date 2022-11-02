@@ -56,7 +56,7 @@ const game = {
       `Gotze`,
     ],
   ],
-  score: `4:0`,
+  score: `4:1`,
   scored: [`Lewandowski`, `Gnarby`, `Lewandowski`, `Hummels`],
   date: `Nov 9th, 2037`,
   odds: {
@@ -66,14 +66,14 @@ const game = {
   },
 };
 
-// const players1 = [...game.players[0]];
-// const players2 = [...game.players[1]];
-// const gk = [players1[0]];
-// const [, ...fieldPlayers] = [...game.players[0]];
-// const allPlayers = [...players1, ...players2];
-// const player1Final = [...players1, `Thiago`, `Coutinho`, `Perisic`];
-// const { team1, x: draw, team2 } = game.odds;
-// // const draw = game.odds.x;
+const players1 = [...game.players[0]];
+const players2 = [...game.players[1]];
+const gk = [players1[0]];
+const [, ...fieldPlayers] = [...game.players[0]];
+const allPlayers = [...players1, ...players2];
+const player1Final = [...players1, `Thiago`, `Coutinho`, `Perisic`];
+const { team1, x: draw, team2 } = game.odds;
+// const draw = game.odds.x;
 
 // console.log(players1);
 // console.log(players2);
@@ -105,7 +105,7 @@ Your tasks:
 
 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember).
 
-3. Print the 3odds to the console, but in a nice formatted way, exactly like this:
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
 Odd of victory Bayern Munich: 1.33 Odd of draw: 3.25
 Odd of victory Borrussia Dortmund: 6.5
 Get the team names directly from the game object, don't hardcode them (except for "draw"). Hint: Note how the odds and the game objects have the same property names 😉.
@@ -116,6 +116,24 @@ Get the team names directly from the game object, don't hardcode them (except fo
        Hummels: 1,
        Lewandowski: 2
 } */
+
+// for (const [i, player] of game.scored.entries())
+//   console.log(`Goal ${i + 1}: ${player}`);
+
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log(average);
+
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === `x` ? `draw` : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr}: ${odd}`);
+// }
+
+// Odd of Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
 
 //
 //////////////////////////////////////////////////////////
@@ -184,6 +202,7 @@ const restaurant = {
 
 // // Looping Objects: Object keys, values & entries
 // // Property names
+
 // const properties = Object.keys(openingHours);
 // console.log(properties);
 
