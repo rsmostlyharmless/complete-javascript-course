@@ -66,13 +66,13 @@ const game = {
   },
 };
 
-const players1 = [...game.players[0]];
-const players2 = [...game.players[1]];
-const gk = [players1[0]];
-const [, ...fieldPlayers] = [...game.players[0]];
-const allPlayers = [...players1, ...players2];
-const player1Final = [...players1, `Thiago`, `Coutinho`, `Perisic`];
-const { team1, x: draw, team2 } = game.odds;
+// const players1 = [...game.players[0]];
+// const players2 = [...game.players[1]];
+// const gk = [players1[0]];
+// const [, ...fieldPlayers] = [...game.players[0]];
+// const allPlayers = [...players1, ...players2];
+// const player1Final = [...players1, `Thiago`, `Coutinho`, `Perisic`];
+// const { team1, x: draw, team2 } = game.odds;
 // const draw = game.odds.x;
 
 // console.log(players1);
@@ -199,6 +199,46 @@ const restaurant = {
     console.log(otherIngr);
   },
 };
+
+// // Sets
+
+// const orderSet = new Set([
+//   `Pasta`,
+//   `Pizza`,
+//   `Pizza`,
+//   `Risotto`,
+//   `Pasta`,
+//   `Pizza`,
+// ]);
+// console.log(orderSet);
+
+// console.log(new Set(`Ryan`));
+
+// console.log(orderSet.size);
+// console.log(orderSet.has(`Pizza`));
+// console.log(orderSet.has(`Bread`));
+
+// orderSet.add(`Garlic Bread`);
+// orderSet.add(`Garlic Bread`);
+// orderSet.delete(`Pasta`);
+// // orderSet.clear();
+// console.log(orderSet);
+
+// for (const order of orderSet) console.log(order);
+
+// // Example
+// const staff = [`Waiter`, `Chef`, `Waiter`, `Manager`, `Chef`, `Waiter`];
+// const basicStaff = [...new Set(staff)];
+// console.log(basicStaff);
+// console.log(
+//   new Set([`Waiter`, `Chef`, `Waiter`, `Manager`, `Chef`, `Waiter`]).size
+// );
+
+// console.log(new Set(`RyanSyder`).size);
+
+//
+////////////////////////////////////////////
+//
 
 // // Looping Objects: Object keys, values & entries
 // // Property names
