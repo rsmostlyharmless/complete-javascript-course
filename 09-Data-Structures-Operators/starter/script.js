@@ -200,6 +200,41 @@ const restaurant = {
   },
 };
 
+// Maps
+const rest = new Map();
+rest.set(`name`, `Bobs Burgers`);
+rest.set(1, `Barcelona, Spain`);
+rest.set(2, `London, England`);
+
+rest
+  .set(`Catagories`, [`Burgers`, `Pizza`, `Gluten Free`, `Vegetarian`])
+  .set(`Open`, 11)
+  .set(`Closed`, 24)
+  .set(true, `We are open 😀`)
+  .set(false, `We are closed 😑`);
+
+console.log(rest.get(`name`));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 1;
+console.log(rest.get(time > rest.get(`Open`) && time < rest.get(`Closed`)));
+
+console.log(rest.has(`Catagories`));
+rest.delete(2);
+
+const arr = [1, 2];
+rest.set(arr, `Test`); // need to define [1, 2]
+rest.set(document.querySelector(`h1`), `Heading`);
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
+console.log(rest.get([1, 2])); // Will not work on its own
+
+//
+//////////////////////////////////////
+//
+
 // // Sets
 
 // const orderSet = new Set([
