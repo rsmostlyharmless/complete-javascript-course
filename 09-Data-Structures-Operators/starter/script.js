@@ -136,6 +136,57 @@ Get the team names directly from the game object, don't hardcode them (except fo
 // Odd of victory Borrussia Dortmund: 6.5
 
 //
+// CHALLENGE 3
+/*
+Your tasks:
+1. Create an array 'events' of the different game events that happened (no duplicates).
+2. After the game has finished, it was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+3. Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes).
+4. Loopover 'gameEvents' and log each element to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+[FIRST HALF] 17: ⚽   GOAL
+*/
+const gameEvents = new Map([
+  [17, `⚽️ Goal`],
+  [36, `🔁 Substitution`],
+  [47, `⚽️ Goal`],
+  [61, `🔁 Substitution`],
+  [64, `🟨 Yellow Card`],
+  [69, `🟥 Red Card`],
+  [70, `🔁 Substitution`],
+  [72, `🔁 Substitution`],
+  [76, `⚽️ Goal`],
+  [80, `⚽️ Goal`],
+  [92, `🟨 Yellow Card`],
+]);
+
+// for (const [key, value] of gameEvents) {
+//   console.log(`${key}: ${value}`);
+// }
+
+// 1
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+// // 2
+// gameEvents.delete(64);
+// console.log(...new Map(gameEvents));
+// // 3
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
+// // 4
+// for (const [key, value] of gameEvents) {
+//   let half = key <= 45 ? `[First Half]` : `[Second Half]`;
+//   console.log(`${half} ${key}: ${value}`);
+// }
+
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === `x` ? `draw` : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr}: ${odd}`);
+// }
+
+//
 //////////////////////////////////////////////////////////
 //
 //////////////////////////////////////////////////////////
@@ -201,35 +252,65 @@ const restaurant = {
 };
 
 // Maps
-const rest = new Map();
-rest.set(`name`, `Bobs Burgers`);
-rest.set(1, `Barcelona, Spain`);
-rest.set(2, `London, England`);
+// const rest = new Map();
+// rest.set(`name`, `Bobs Burgers`);
+// rest.set(1, `Barcelona, Spain`);
+// rest.set(2, `London, England`);
 
-rest
-  .set(`Catagories`, [`Burgers`, `Pizza`, `Gluten Free`, `Vegetarian`])
-  .set(`Open`, 11)
-  .set(`Closed`, 24)
-  .set(true, `We are open 😀`)
-  .set(false, `We are closed 😑`);
+// rest
+//   .set(`Catagories`, [`Burgers`, `Pizza`, `Gluten Free`, `Vegetarian`])
+//   .set(`Open`, 11)
+//   .set(`Closed`, 24)
+//   .set(true, `We are open 😀`)
+//   .set(false, `We are closed 😑`);
 
-console.log(rest.get(`name`));
-console.log(rest.get(true));
-console.log(rest.get(1));
+// console.log(rest.get(`name`));
+// console.log(rest.get(true));
+// console.log(rest.get(1));
 
-const time = 1;
-console.log(rest.get(time > rest.get(`Open`) && time < rest.get(`Closed`)));
+// const time = 1;
+// console.log(rest.get(time > rest.get(`Open`) && time < rest.get(`Closed`)));
 
-console.log(rest.has(`Catagories`));
-rest.delete(2);
+// console.log(rest.has(`Catagories`));
+// rest.delete(2);
 
-const arr = [1, 2];
-rest.set(arr, `Test`); // need to define [1, 2]
-rest.set(document.querySelector(`h1`), `Heading`);
-console.log(rest);
-console.log(rest.size);
-console.log(rest.get(arr));
-console.log(rest.get([1, 2])); // Will not work on its own
+// const arr = [1, 2];
+// rest.set(arr, `Test`); // need to define [1, 2]
+// rest.set(document.querySelector(`h1`), `Heading`);
+// console.log(rest);
+// console.log(rest.size);
+// console.log(rest.get(arr));
+// console.log(rest.get([1, 2])); // Will not work on its own
+
+// More Maps
+// const question = new Map([
+//   [`Question`, `What is it?`],
+//   [1, `This`],
+//   [2, `That`],
+//   [3, `The other`],
+//   [`correct`, 2],
+//   [true, `Correct 🎉`],
+//   [false, `Wrong ☠️`],
+// ]);
+// console.log(question);
+// // convert object to map
+// // console.log(openingHours);
+// // const hourMap = new Map(Object.entries(openingHours));
+// // console.log(hourMap);
+
+// // Quiz
+// console.log(question.get(`Question`));
+// for (const [key, value] of question) {
+//   if (typeof key === `number`) console.log(`Answer ${key}: ${value}`);
+// }
+// const answer = Number(prompt(`Your Answer`));
+// console.log(question.get(question.get(`correct`) === answer));
+
+// convert map to array
+// console.log([...question]);
+// // console.log(question.entries()); same as above
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
 
 //
 //////////////////////////////////////
