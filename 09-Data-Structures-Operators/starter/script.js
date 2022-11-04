@@ -195,6 +195,137 @@ const gameEvents = new Map([
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+// Working with strings AGAIN!
+const str = `a+very+nice+string`.split(`+`);
+const me = `Ryan Syder`.split(` `);
+console.log(str, me);
+
+//
+///////////////////////////////////////
+//
+/*
+// More Working with strings
+// toLowerCase & toUpperCase
+const airline = `TAP Air Portugal`;
+const plane = `A320`;
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passenger = `rYaN`; // Ryan
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+const capitalR = passenger[0].toUpperCase() + passengerLower.slice(1);
+console.log(capitalR);
+// const passengerHighR = passenger.toUpperCase()[0];
+// console.log(passengerHighR);
+// const together = passengerHighR + passengerLower.slice(1);
+// console.log(together);
+
+// Comparing
+const email = `hello@ryan.io`;
+const loginEmail = ` Hello@Ryan.Io \n`;
+console.log(loginEmail);
+const lowerEmail = loginEmail.toLowerCase();
+const trimEmail = lowerEmail.trim();
+console.log(trimEmail);
+
+const normEmail = loginEmail.toLowerCase().trim(); // chaining for easier use
+console.log(normEmail);
+
+// Replacing
+const priceGB = `288,97£`;
+const priceUSA = priceGB.replace(`£`, `$`).replace(`,`, `.`); // Second arguement replaces first
+console.log(priceGB, priceUSA);
+
+const announcement = `All passengers come to boarding door 23. Boarding door 23!`;
+const door = announcement.replace(`door`, `gate`); // will change first word only
+const allDoors = announcement.replaceAll(`door`, `gate`); // will change all words
+const anotherWay = announcement.replace(/door/g, `gate`); // before replaceAll was created
+console.log(door, allDoors, anotherWay);
+
+// Booleans
+const plane2 = `Airbus A320neo`;
+console.log(plane2.includes(`A320`));
+console.log(plane2.includes(`Boeing`));
+console.log(plane2.startsWith(`Air`)); // reads if charactors are in string
+
+if (plane2.startsWith(`Airbus`) && plane2.endsWith(`neo`)) {
+  console.log(`New Airbus`);
+}
+
+// Practice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase(); // easier to compare items if all in lowerCase
+  if (baggage.includes(`knife`) || baggage.includes(`gun`)) {
+    console.log(`You can not board the plane!`);
+  } else {
+    console.log(`Welome on board!`);
+  }
+};
+
+checkBaggage(`Laptop, Food and Pocket Knife`);
+checkBaggage(`Socks and Camera`);
+checkBaggage(`Snacks and Gun`);
+*/
+
+//
+//////////////////////////////////////////
+//
+/*
+// Working with strings
+// all strings are 0 based - `Ryan` = 0R 1y 2a 3n
+
+const airline = `TAP Air Portugal`;
+const plane = `A320`;
+
+console.log(plane[0]);
+console.log(plane[1], plane[2]);
+console.log(`B737`[0]);
+
+console.log(airline.length);
+console.log(`B737`.length);
+
+// IndexOf & lastIndexOf
+console.log(airline.indexOf(`r`));
+console.log(airline.lastIndexOf(`r`));
+console.log(airline.indexOf(`Portugal`));
+console.log(airline.indexOf(`portugal`)); // -1 appears as this method is case sensitive
+
+// Slice method
+// startNum is everything before but not including num and endNum is everything after including num
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7)); // extracted = endNum - startNum (Air)
+
+console.log(airline.slice(0, airline.indexOf(` `))); // found the first space
+console.log(airline.slice(airline.lastIndexOf(` `))); // found the last space
+
+console.log(airline.slice(-2)); // Last 2 letters in array
+console.log(airline.slice(1, -2)); // sliced from T - al
+
+const checkMidSeat = function (seat) {
+  // B & E are middle seats
+  const s = seat.slice(-1);
+  if (s === `B` || s === `E`) {
+    return `Middle Seat`;
+  } else {
+    return `Lucky Duck`;
+  }
+};
+
+console.log(checkMidSeat(`11B`));
+console.log(checkMidSeat(`23C`));
+console.log(checkMidSeat(`3E`));
+
+// JS turns strings into objects inthe background and then back to a sting
+console.log(new String('Ryan'));
+console.log(typeof new String('Ryan'));
+console.log(typeof new String('Ryan').slice(1));
+*/
+
+//
+/////////////////////////////////////
+//
+
 // Data needed for first part of the section
 const weekdays = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, `Sun`];
 const openingHours = {
@@ -250,6 +381,10 @@ const restaurant = {
     console.log(otherIngr);
   },
 };
+
+//
+////////////////////////////////////
+//
 
 // Maps
 // const rest = new Map();
