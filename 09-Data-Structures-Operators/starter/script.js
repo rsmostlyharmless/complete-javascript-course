@@ -195,10 +195,60 @@ const gameEvents = new Map([
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+/*
 // Working with strings AGAIN!
+// split and join
 const str = `a+very+nice+string`.split(`+`);
 const me = `Ryan Syder`.split(` `);
 console.log(str, me);
+
+const [firstName, LastName] = `Ryan Syder`.split(` `);
+
+const newName = [`Mr.`, firstName, LastName.toUpperCase()].join(` `);
+console.log(newName);
+
+const capitalise = function (name) {
+  const names = name.split(` `);
+  const namesUpper = [];
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1)); // or
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(` `));
+};
+
+capitalise(`Jessica ann smith davies`);
+capitalise(`ryan syder`);
+
+// Padding a string
+// adds more content to the start
+const words = `go to gate 40`;
+console.log(words.padStart(25, `+`));
+console.log(`ryan`.padStart(20, `+`));
+
+// adds more content to the end
+console.log(words.padEnd(25, `+`));
+console.log(`ryan`.padEnd(20, `+`));
+
+const maskCard = function (number) {
+  const str = number + ``;
+  const last = str.slice(-4);
+  return last.padStart(str.length, `*`);
+};
+console.log(maskCard(12345678));
+console.log(maskCard(`3284675378462376349`));
+
+// Repeat
+const message2 = `Bad weather... all departures delayed... `;
+console.log(message2.repeat(5));
+
+const planeQ = function (n) {
+  console.log(`There are ${n} planes in line ${`✈️`.repeat(n)}`);
+};
+planeQ(4);
+planeQ(8);
+planeQ(12);
+*/
 
 //
 ///////////////////////////////////////
