@@ -279,3 +279,27 @@ console.log(addVAT2(23));
 //   };
 // };
 */
+
+//
+////////////////////////////////////////
+//
+
+// Immediately invoked function expressions(IIFE)
+/*
+// runOnce can still be called anytime
+const runOnce = function () {
+  console.log(`Will this only run once?`);
+};
+runOnce();
+
+// IIFE is a function wrapped in () with more () after
+(function () {
+  console.log(`Will never run again!!!`);
+  const isPrivate = 23;
+})();
+// isPrivate can not be accessed
+// console.log(isPrivate);
+
+// as arrow function
+(() => console.log(`Dead End!!!`))();
+*/
