@@ -74,3 +74,48 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+let arr = [`a`, `b`, `c`, `d`, `e`];
+
+// Slice
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2));
+console.log(arr.slice(-1));
+console.log(arr.slice(1, -2));
+console.log(arr.slice());
+console.log([...arr]);
+
+// Splice
+// console.log(arr.splice(2));
+arr.splice(-1);
+console.log(arr);
+arr.splice(1, 2);
+console.log(arr);
+
+// Reverse - Mutates original array
+arr = [`a`, `b`, `c`, `d`, `e`];
+let newArr = [`j`, `i`, `h`, `g`, `f`];
+
+console.log(newArr.reverse());
+console.log(newArr);
+
+// Concat
+const letters = arr.concat(newArr);
+console.log(letters);
+console.log(...arr, ...newArr);
+
+// Join
+console.log(letters.join(` - `));
+
+// At
+const atArr = [23, 11, 64];
+console.log(atArr[1]);
+console.log(atArr.at(1));
+// getting the last element
+console.log(atArr[atArr.length - 1]);
+console.log(atArr.slice(-1)[0]);
+console.log(atArr.at(-1));
+
+console.log(`Ryan`.at(0));
+console.log(`Ryan`.at(-1));
