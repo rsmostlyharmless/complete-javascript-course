@@ -5,7 +5,6 @@
 // BANKIST APP
 
 // Data
-/*
 const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -80,7 +79,6 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
-*/
 
 // console.log(containerMovements.innerHTML);
 
@@ -199,6 +197,61 @@ currenciesUnique.forEach(function (value, _, map) {
 });
 */
 
+//////////////////////////////////////////
+
+// Data transformations: Map, Filter, Reduce;
+
+const arr = [1, 2, 3, 4, 5];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+/*
+// Map - maps the old array and produces a new array
+const mapArr = arr.map(function (i) {
+  return i + 2;
+});
+console.log(mapArr);
+
+const eurToUsd = 1.1;
+const convert = movements.map(function (i) {
+  return i * eurToUsd;
+  // return 23;
+});
+console.log(convert);
+
+const arrow = movements.map(i => i * eurToUsd);
+console.log(arrow);
+
+// a forOf loop works the same but map is more modern and cleaner
+const movUSD = [];
+for (const i of movements) {
+  movUSD.push(i * eurToUsd);
+}
+console.log(movUSD);
+
+const call = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? `deposited` : `withdrew`} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(call);
+*/
+
+/*
+// // Filter - used to filter the elements of original array if condition is true
+const filterArr = arr.filter(function (i) {
+  return i > 3;
+});
+console.log(filterArr);
+
+// Reduce - reduces the original array into one value
+const reduceArr = arr.reduce(function (i) {
+  return i + i;
+});
+console.log(reduceArr);
+*/
+
 //
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
@@ -241,6 +294,7 @@ const checkDogs = function (dogsJulia, dogsKate) {
   console.log(dogList);
 };
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
 // The answer given in the challenge video
 const checkDogsJS = function (dogsJulia, dogsKate) {
@@ -262,4 +316,5 @@ const checkDogsJS = function (dogsJulia, dogsKate) {
   console.log(dogList);
 };
 checkDogsJS([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+checkDogsJS([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 */
