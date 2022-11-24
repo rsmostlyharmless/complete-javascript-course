@@ -80,6 +80,12 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const calcDispBal = function (movements) {
+  const balance = movements.reduce((accu, curr) => accu + curr, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+console.log(calcDispBal(account1.movements));
+
 const nameAbr = function (accs) {
   accs.forEach(function (acc) {
     acc.userName = acc.owner
@@ -273,10 +279,26 @@ console.log(withFor);
 */
 
 // Reduce - reduces the original array into one value
-const reduceArr = arr.reduce(function (i) {
-  return i + i;
-});
+// Accumulate, element, index, array
+const reduceArr = arr.reduce(function (i, j) {
+  return i + j;
+}, 0);
 console.log(reduceArr);
+// Accumulator  - Snowball affect
+const balance = movements.reduce((accu, curr) => accu + curr, 0); // ensures calculation starts from a set number
+console.log(balance);
+
+// as a forOf loop
+let balanceOf = 0;
+for (const mov of movements) balanceOf += mov;
+console.log(balanceOf);
+
+// Max Value with reduce
+const max = movements.reduce(
+  (accu, curr) => (accu > curr ? accu : curr),
+  movements[0]
+);
+console.log(max);
 
 //
 ////////////////////////////////////////////////
