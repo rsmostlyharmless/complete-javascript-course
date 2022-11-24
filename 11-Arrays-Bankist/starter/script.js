@@ -80,6 +80,17 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const nameAbr = function (accs) {
+  accs.forEach(function (acc) {
+    acc.userName = acc.owner
+      .toLocaleLowerCase()
+      .split(` `)
+      .map(i => i[0])
+      .join(``);
+  });
+};
+nameAbr(accounts);
+
 // console.log(containerMovements.innerHTML);
 
 /////////////////////////////////////////////////
