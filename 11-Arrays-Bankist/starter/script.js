@@ -324,6 +324,7 @@ console.log(max);
 
 /////////////////////////////////////////
 
+/*
 // Chaining methods
 const eurToUsd = 1.1;
 const step1 = movements.filter(mov => mov > 0);
@@ -337,6 +338,7 @@ const step3 = movements
   .map(mov => mov * eurToUsd)
   .reduce((i, j) => i + j, 0);
 console.log(step3);
+*/
 
 //
 ////////////////////////////////////////////////
@@ -434,6 +436,29 @@ const calcAverageHumanAge = function (ages) {
   const aveAge = adults.reduce((i, j, k, l) => i + j / l.length, 0);
   return aveAge;
 };
+const ave1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+const ave2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+
+console.log(ave1);
+console.log(ave2);
+*/
+
+///////////////////////////////////////
+
+// Challenge 3
+/*
+Rewrite the 'calcAverageHumanAge' function from Challenge #2, but this time as an arrow function, and using chaining!
+
+Test data:
+- Data1:[5,2,4,1,15,8,3] § Data2:[16,6,10,5,6,1,4]
+*/
+/*
+const calcAverageHumanAge = ages =>
+  ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((h, i, j, k) => h + i / k.length, 0);
+
 const ave1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 const ave2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
