@@ -82,9 +82,29 @@ displayMovements(account1.movements);
 
 const calcDispBal = function (movements) {
   const balance = movements.reduce((accu, curr) => accu + curr, 0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance} €`;
 };
 calcDispBal(account1.movements);
+
+const dispSummery = function (movements) {
+  const income = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${income}€`;
+
+  const outcome = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(outcome)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(mov => (mov * 1.2) / 100)
+    .filter(mov => mov > 1)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumInterest.textContent = `${interest}€`;
+};
+dispSummery(account1.movements);
 
 const nameAbr = function (accs) {
   accs.forEach(function (acc) {
@@ -301,6 +321,22 @@ const max = movements.reduce(
 );
 console.log(max);
 */
+
+/////////////////////////////////////////
+
+// Chaining methods
+const eurToUsd = 1.1;
+const step1 = movements.filter(mov => mov > 0);
+console.log(step1);
+
+const step2 = movements.filter(mov => mov > 0).map(mov => mov * eurToUsd);
+console.log(step2);
+
+const step3 = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((i, j) => i + j, 0);
+console.log(step3);
 
 //
 ////////////////////////////////////////////////
