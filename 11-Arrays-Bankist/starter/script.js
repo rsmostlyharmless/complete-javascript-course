@@ -79,9 +79,9 @@ const displayMovements = function (movements) {
 };
 // console.log(containerMovements.innerHTML);
 
-const calcDispBal = function (movements) {
-  const balance = movements.reduce((accu, curr) => accu + curr, 0);
-  labelBalance.textContent = `${balance} €`;
+const calcDispBal = function (acc) {
+  acc.balance = acc.movements.reduce((accu, curr) => accu + curr, 0);
+  labelBalance.textContent = `${acc.balance} €`;
 };
 
 const dispSummery = function (acc) {
@@ -105,7 +105,7 @@ const dispSummery = function (acc) {
 
 const nameAbr = function (accs) {
   accs.forEach(function (acc) {
-    acc.userName = acc.owner
+    acc.username = acc.owner
       .toLocaleLowerCase()
       .split(` `)
       .map(i => i[0])
@@ -114,34 +114,61 @@ const nameAbr = function (accs) {
 };
 nameAbr(accounts);
 
+const updateUI = function (acc) {
+  // Display movements
+  displayMovements(acc.movements);
+
+  // Display balance
+  calcDispBal(acc);
+
+  // Display summery
+  dispSummery(acc);
+};
+
 let currentAcount;
+
 btnLogin.addEventListener(`click`, function (e) {
   // prevent for from submitting
   e.preventDefault();
 
   currentAcount = accounts.find(
-    acc => acc.userName === inputLoginUsername.value
+    acc => acc.username === inputLoginUsername.value
   );
 
   if (currentAcount?.pin === Number(inputLoginPin.value)) {
     // Display UI and message
     labelWelcome.textContent = `Welcome Back ${
       currentAcount.owner.split(` `)[0]
-    } `;
+    }`;
     containerApp.style.opacity = 100;
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = ``;
     inputLoginPin.blur();
 
-    // Display movements
-    displayMovements(currentAcount.movements);
+    updateUI(currentAcount);
+  }
+});
 
-    // Display balance
-    calcDispBal(currentAcount.movements);
+btnTransfer.addEventListener(`click`, function (e) {
+  e.preventDefault();
 
-    // Display summery
-    dispSummery(currentAcount);
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  inputTransferAmount.value = inputTransferTo.value = ``;
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAcount.balance >= amount &&
+    receiverAcc?.username !== currentAcount.username
+  ) {
+    currentAcount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+
+    updateUI(currentAcount);
   }
 });
 
