@@ -340,6 +340,24 @@ const step3 = movements
 console.log(step3);
 */
 
+///////////////////////////////
+
+// The find method
+// find returns an element not an array
+const first = movements.find(mov => mov < 0); // finds first element
+console.log(movements);
+console.log(first);
+
+// find for looking up properties
+console.log(accounts);
+const account = accounts.find(acc => acc.owner === `Jessica Davis`);
+console.log(account);
+
+// as a forOf loop
+let findFirstEl = [];
+for (const mov of movements) if (mov < 0) findFirstEl.push(mov);
+console.log(findFirstEl);
+
 //
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
