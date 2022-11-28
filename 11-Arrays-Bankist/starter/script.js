@@ -77,34 +77,31 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML(`afterbegin`, html);
   });
 };
-
-displayMovements(account1.movements);
+// console.log(containerMovements.innerHTML);
 
 const calcDispBal = function (movements) {
   const balance = movements.reduce((accu, curr) => accu + curr, 0);
   labelBalance.textContent = `${balance} €`;
 };
-calcDispBal(account1.movements);
 
-const dispSummery = function (movements) {
-  const income = movements
+const dispSummery = function (acc) {
+  const income = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${income}€`;
 
-  const outcome = movements
+  const outcome = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(outcome)}€`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(mov => (mov * 1.2) / 100)
+    .map(mov => (mov * acc.interestRate) / 100)
     .filter(mov => mov > 1)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumInterest.textContent = `${interest}€`;
 };
-dispSummery(account1.movements);
 
 const nameAbr = function (accs) {
   accs.forEach(function (acc) {
@@ -117,7 +114,36 @@ const nameAbr = function (accs) {
 };
 nameAbr(accounts);
 
-// console.log(containerMovements.innerHTML);
+let currentAcount;
+btnLogin.addEventListener(`click`, function (e) {
+  // prevent for from submitting
+  e.preventDefault();
+
+  currentAcount = accounts.find(
+    acc => acc.userName === inputLoginUsername.value
+  );
+
+  if (currentAcount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and message
+    labelWelcome.textContent = `Welcome Back ${
+      currentAcount.owner.split(` `)[0]
+    } `;
+    containerApp.style.opacity = 100;
+
+    // Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = ``;
+    inputLoginPin.blur();
+
+    // Display movements
+    displayMovements(currentAcount.movements);
+
+    // Display balance
+    calcDispBal(currentAcount.movements);
+
+    // Display summery
+    dispSummery(currentAcount);
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -343,6 +369,7 @@ console.log(step3);
 ///////////////////////////////
 
 // The find method
+/*
 // find returns an element not an array
 const first = movements.find(mov => mov < 0); // finds first element
 console.log(movements);
@@ -357,6 +384,7 @@ console.log(account);
 let findFirstEl = [];
 for (const mov of movements) if (mov < 0) findFirstEl.push(mov);
 console.log(findFirstEl);
+*/
 
 //
 ////////////////////////////////////////////////
