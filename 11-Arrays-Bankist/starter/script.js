@@ -472,6 +472,39 @@ console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
 */
 
+//////////////////////////
+
+// Flat and flatMap
+
+// Flat
+const arrs = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arrs.flat());
+// flat only goes 1 level deep
+const inception = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+// (2) controles depth
+console.log(inception.flat(2));
+
+const accMovements = accounts.map(acc => acc.movements);
+console.log(accMovements);
+const allMovements = accMovements.flat();
+console.log(allMovements);
+const totalBal = allMovements.reduce((acc, mov) => acc + mov, 0);
+console.log(totalBal);
+
+// Chaining
+const chainTotal = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(chainTotal);
+
+// flatMap
+// Only goes 1 level deep
+const flatMapTotal = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(flatMapTotal);
+
 //
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
