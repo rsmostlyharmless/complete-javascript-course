@@ -588,6 +588,145 @@ labelBalance.addEventListener(`click`, function () {
   );
   console.log(movementsUI);
 });
+
+// Can work the same as above but not recommended
+const movementsUI2 = [...document.querySelectorAll(`.movements__value`)];
+*/
+
+///////////////////////////
+
+// The Array Methods
+// Which to use and when
+/*
+// MUTATING ORIGINAL ARRAY
+// Adds
+a.push(); // end
+b.unshift(); // start
+// REMOVES
+c.pop(); // end
+d.shift(); // start
+e.splice(); // any
+// OTHERS
+f.reverse();
+g.sort();
+h.fill();
+
+// A NEW ARRAY
+// Computed from original
+i.map(); // loop
+// Filtered using condition
+j.filter();
+// Portion of original
+K.slice();
+// Adding to original
+l.concat();
+// Flattening original
+m.flat();
+n.flatMap;
+
+// AN ARRAY INDEX
+// Based on value
+o.indexOf();
+// Based on test condition
+p.findIndex();
+
+// AN ARRAY ELEMENT
+// Based on test condition
+q.find();
+
+// KNOW IF ANY ARRAY INCLUDES
+// Based on value
+r.includes();
+// Based on test condition
+s.some();
+t.every();
+
+// A NEW STRING
+// Based on separator string
+u.join();
+
+// TO TRANSFORM A VALUE
+v.reduce(); // boil down array to value of any type: number, string, boolean, new array or object
+
+// TO LOOP AN ARRAY
+// Based on callback
+w.forEach(); // purely for looping over arrays, does not create
+x;
+y;
+z;
+*/
+
+//
+/////////////////////////
+//
+
+// Array Methods Practice
+/*
+// 1
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((a, b) => a + b, 0);
+console.log(bankDepositSum);
+
+// 2
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov >= 1000).length;
+console.log(numDeposits1000);
+
+const numDepo1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((a, b) => (b >= 1000 ? ++a : a), 0); // a++ will not work here
+console.log(numDepo1000);
+
+// Prefix ++ operator
+let a = 10;
+console.log(a++);
+console.log(a);
+console.log(++a);
+
+// 3
+const { deposits, withdrawals } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (a, b) => {
+      // b > 0 ? (a.deposits += b) : (a.withdrawals += b);
+      a[b > 0 ? `deposits` : `withdrawals`] += b;
+      return a;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+console.log(deposits, withdrawals);
+
+// 4
+// title of your sex tape - Title of Your Sex Tape
+const titleCaseConverter = function (title) {
+  const capitalise = str => str[0].toUpperCase() + str.slice(1);
+
+  const exempt = [
+    `a`,
+    `of`,
+    `an`,
+    `the`,
+    `but`,
+    `or`,
+    `on`,
+    `in`,
+    `with`,
+    `it`,
+    `to`,
+  ];
+  const titleCase = title
+    .toLowerCase()
+    .split(` `)
+    .map(word => (exempt.includes(word) ? word : capitalise(word)))
+    .join(` `);
+  return capitalise(titleCase);
+};
+console.log(titleCaseConverter(`and what a DEEP hole`));
+console.log(titleCaseConverter(`kEePing It up WITH context`));
+console.log(titleCaseConverter(`hoW to FUNCtion on A viBraTing moUNTing`));
 */
 
 //
