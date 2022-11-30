@@ -61,10 +61,12 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = ``;
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov < 0 ? `withdrawal` : `deposit`;
     const html = `
     <div class="movements__row">
@@ -202,6 +204,13 @@ btnClose.addEventListener(`click`, function (e) {
   }
 
   inputCloseUsername.value = inputClosePin.value = ``;
+});
+
+let sorted = false;
+btnSort.addEventListener(`click`, function (e) {
+  e.preventDefault();
+  displayMovements(currentAcount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
@@ -475,7 +484,7 @@ console.log(movements.filter(deposit));
 //////////////////////////
 
 // Flat and flatMap
-
+/*
 // Flat
 const arrs = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arrs.flat());
@@ -504,6 +513,51 @@ const flatMapTotal = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(flatMapTotal);
+*/
+
+///////////////////////////////
+
+// Sorting arrays
+/*
+// Sort works with arrays
+// Strings
+const owners = [`Ryan`, `Amy`, `Dirk`, `Gwen`];
+console.log(owners.sort());
+console.log(owners);
+
+// Numbers
+const num = [10, 6, 18, 14, 1];
+console.log(num.sort());
+console.log(num);
+console.log(movements.sort());
+
+// And needs to be programed to sort numbers
+// return < 0, a, b
+// return > 0 b, a
+// Ascending
+const sortedNum = movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (a < b) return -1;
+});
+console.log(sortedNum);
+
+const easier = movements.sort((a, b) => a - b);
+console.log(easier);
+
+// Descending
+const sortedNum2 = movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+});
+console.log(sortedNum2);
+
+const easier2 = movements.sort((a, b) => b - a);
+console.log(easier2);
+*/
+
+//////////////////////////////
+
+// More creating and filling arrays
 
 //
 ////////////////////////////////////////////////
