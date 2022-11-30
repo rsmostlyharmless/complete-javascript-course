@@ -70,10 +70,10 @@ const displayMovements = function (movements, sort = false) {
     const type = mov < 0 ? `withdrawal` : `deposit`;
     const html = `
     <div class="movements__row">
-      <div class="movements__type movements__type--${type}">${
+      <div class="movements__type movements__type--${type}">€{
       i + 1
     } ${type}</div>
-      <div class="movements__value">${mov}</div>
+      <div class="movements__value">${mov}€</div>
     </div>
   `;
     containerMovements.insertAdjacentHTML(`afterbegin`, html);
@@ -558,6 +558,37 @@ console.log(easier2);
 //////////////////////////////
 
 // More creating and filling arrays
+/*
+const arr1 = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// empty arr + fill method
+const x = new Array(7);
+console.log(x);
+// nothing happens
+// console.log(x.map(() => 5));
+
+const fillIt = x.fill(1, 3, 5);
+console.log(fillIt);
+
+arr1.fill(18, 2, 6);
+console.log(arr1);
+
+// Array.from (cleaning method than above........maybe)
+const arrFrom = Array.from({ length: 7 }, () => 1);
+console.log(arrFrom);
+
+const arrFrom2 = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(arrFrom2);
+
+labelBalance.addEventListener(`click`, function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll(`.movements__value`),
+    el => Number(el.textContent.replace(`€`, ``))
+  );
+  console.log(movementsUI);
+});
+*/
 
 //
 ////////////////////////////////////////////////
